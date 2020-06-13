@@ -1,0 +1,667 @@
+[
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-11112",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.commons.proxy.provider.remoting.RmiProvider (aka apache/commons-proxy).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "org.cryptacular:cryptacular": [
+                "[,1.2.4)"
+            ]
+        },
+        "cve": "CVE-2020-7226",
+        "description": "CiphertextHeader.java in Cryptacular before 1.2.4, as used in Apereo CAS and other products, allows attackers to trigger excessive memory allocation during a decode operation, because the nonce array length associated with &quot;new byte&quot; may depend on untrusted input within the header of encoded data.",
+        "severity": "MODERATE",
+        "summary": "Denial of Service in Cryptacular"
+    },
+    {
+        "affects": {
+            "org.dom4j:dom4j": [
+                "[,2.1.3)"
+            ]
+        },
+        "cve": "CVE-2020-10683",
+        "description": "dom4j before 2.1.3 allows external DTDs and External Entities by default, which might enable XXE attacks. However, there is popular external documentation from OWASP showing how to enable the safe, non-default behavior in any application that uses dom4j.",
+        "severity": "HIGH",
+        "summary": "dom4j allows External Entities by default which might enable XXE attacks"
+    },
+    {
+        "affects": {
+            "org.apache.logging.log4j:log4j": [
+                "[,2.13.2)"
+            ]
+        },
+        "cve": "CVE-2020-9488",
+        "description": "Improper validation of certificate with host mismatch in Apache Log4j SMTP appender. This could allow an SMTPS connection to be intercepted by a man-in-the-middle attack which could leak any log messages sent through that appender.",
+        "severity": "MODERATE",
+        "summary": "Improper validation of certificate with host mismatch in Apache Log4j SMTP appender"
+    },
+    {
+        "affects": {
+            "org.springframework.security:spring-security-core": [
+                "[5.3.0,5.3.2)",
+                "[5.2.0,5.2.4)"
+            ]
+        },
+        "cve": "CVE-2020-5407",
+        "description": "Spring Security versions 5.2.x prior to 5.2.4 and 5.3.x prior to 5.3.2 contain a signature wrapping vulnerability during SAML response validation. When using the spring-security-saml2-service-provider component, a malicious user can carefully modify an otherwise valid SAML response and append an arbitrary assertion that Spring Security will accept as valid.",
+        "severity": "MODERATE",
+        "summary": "Signature wrapping vulnerability in Spring Security"
+    },
+    {
+        "affects": {
+            "org.springframework.cloud:spring-cloud-config-server": [
+                "[2.2.0,2.2.3)",
+                "[2.1.0,2.1.9)"
+            ]
+        },
+        "cve": "CVE-2020-5410",
+        "description": "Spring Cloud Config, versions 2.2.x prior to 2.2.3, versions 2.1.x prior to 2.1.9, and older unsupported versions allow applications to serve arbitrary configuration files through the spring-cloud-config-server module. A malicious user, or attacker, can send a request using a specially crafted URL that can lead to a directory traversal attack.",
+        "severity": "MODERATE",
+        "summary": "Directory traversal attack in Spring Cloud Config"
+    },
+    {
+        "affects": {
+            "org.springframework.cloud:spring-cloud-config-server": [
+                "[2.2.0,2.2.2)",
+                "[2.1.0,2.1.7)"
+            ]
+        },
+        "cve": "CVE-2020-5405",
+        "description": "Spring Cloud Config, versions 2.2.x prior to 2.2.2, versions 2.1.x prior to 2.1.7, and older unsupported versions allow applications to serve arbitrary configuration files through the spring-cloud-config-server module. A malicious user, or attacker, can send a request using a specially crafted URL that can lead a directory traversal attack.",
+        "severity": "MODERATE",
+        "summary": "Directory traversal attack in Spring Cloud Config"
+    },
+    {
+        "affects": {
+            "org.apache.ignite:ignite-core": [
+                "[,2.8.1)"
+            ]
+        },
+        "cve": "CVE-2020-1963",
+        "description": "Apache Ignite uses H2 database to build SQL distributed execution engine. H2 provides SQL functions which could be used by attacker to access to a filesystem.",
+        "severity": "MODERATE",
+        "summary": "File system access via H2 in Apache Ignite"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-netty": [
+                "[3.0.0,3.2.0)"
+            ]
+        },
+        "cve": "CVE-2020-11973",
+        "description": "Apache Camel Netty enables Java deserialization by default. Apache Camel 2.22.x, 2.23.x, 2.24.x, 2.25.0, 3.0.0 up to 3.1.0 are affected. 2.x users should upgrade to 2.25.1, 3.x users should upgrade to 3.2.0.",
+        "severity": "HIGH",
+        "summary": "Apache Camel Netty enables Java deserialization by default"
+    },
+    {
+        "affects": {
+            "org.apache.activemq:activemq-web-console": [
+                "[5.0.0,5.15.12)"
+            ]
+        },
+        "cve": "CVE-2020-1941",
+        "description": "In Apache ActiveMQ 5.0.0 to 5.15.11, the webconsole admin GUI is open to XSS, in the view that lists the contents of a queue.",
+        "severity": "MODERATE",
+        "summary": "Apache ActiveMQ webconsole admin GUI is open to XSS"
+    },
+    {
+        "affects": {
+            "net.sourceforge.htmlunit:htmlunit": [
+                "[,2.37.0)"
+            ]
+        },
+        "cve": "CVE-2020-5529",
+        "description": "HtmlUnit prior to 2.37.0 contains code execution vulnerabilities. HtmlUnit initializes Rhino engine improperly, hence a malicious JavScript code can execute arbitrary Java code on the application. Moreover, when embedded in Android application, Android-specific initialization of Rhino engine is done in an improper way, hence a malicious JavaScript code can execute arbitrary Java code on the application.",
+        "severity": "MODERATE",
+        "summary": "Code execution vulnerability in HtmlUnit"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[7.0.0,7.0.104)",
+                "[8.0.0,8.5.55)",
+                "[9.0.0,9.0.35)",
+                "[10.0.0-M1,10.0.0-M4]"
+            ]
+        },
+        "cve": "CVE-2020-9484",
+        "description": "When using Apache Tomcat versions 10.0.0-M1 to 10.0.0-M4, 9.0.0.M1 to 9.0.34, 8.5.0 to 8.5.54 and 7.0.0 to 7.0.103 if a) an attacker is able to control the contents and name of a file on the server; and b) the server is configured to use the PersistenceManager with a FileStore; and c) the PersistenceManager is configured with sessionAttributeValueClassNameFilter=\"null\" (the default unless a SecurityManager is used) or a sufficiently lax filter to allow the attacker provided object to be deserialized; and d) the attacker knows the relative file path from the storage location used by FileStore to the file the attacker has control over; then, using a specifically crafted request, the attacker will be able to trigger remote code execution via deserialization of the file under their control. Note that all of conditions a) to d) must be true for the attack to succeed.",
+        "severity": "MODERATE",
+        "summary": "Potential remote code execution in Apache Tomcat"
+    },
+    {
+        "affects": {
+            "org.apache.commons:commons-configuration2": [
+                "[2.2,2.7)"
+            ]
+        },
+        "cve": "CVE-2020-1953",
+        "description": "Apache Commons Configuration uses a third-party library to parse YAML files which by default allows the instantiation of classes if the YAML includes special statements. Apache Commons Configuration versions 2.2, 2.3, 2.4, 2.5, 2.6 did not change the default settings of this library. So if a YAML file was loaded from an untrusted source, it could therefore load and execute code out of the control of the host application.",
+        "severity": "HIGH",
+        "summary": "Remote code execution in Apache Commons Configuration"
+    },
+    {
+        "affects": {
+            "org.jooby:jooby": [
+                "[,2.8.2)"
+            ],
+            "io.jooby:jooby": [
+                "[,2.8.2)"
+            ]
+        },
+        "cve": "CVE-2020-7647",
+        "description": "### Impact\nAccess to sensitive information available from classpath. \n\n### Patches\nPatched version: 1.6.7 and 2.8.2\n\nCommit 1.x: https://github.com/jooby-project/jooby/commit/34f526028e6cd0652125baa33936ffb6a8a4a009\n\nCommit 2.x: https://github.com/jooby-project/jooby/commit/c81479de67036993f406ccdec23990b44b0bec32\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\n### References\n\nLatest 1.x version: 1.6.6\n\n#### Arbitrary class path resource access 1\nWhen sharing a *File System* directory as in:\n\n``` java\nassets(\"/static/**\", Paths.get(\"static\"));\n```\n\nThe class path is also searched for the file (`org.jooby.handlers.AssetHandler.loader`):\n[jooby/AssetHandler.java at 1.x \u00b7 jooby-project/jooby \u00b7 GitHub](https://github.com/jooby-project/jooby/blob/1.x/jooby/src/main/java/org/jooby/handlers/AssetHandler.java)\n\n``` java\n  private static Loader loader(final Path basedir, final ClassLoader classloader) {\n    if (Files.exists(basedir)) {\n      return name -> {\n        Path path = basedir.resolve(name).normalize();\n        if (Files.exists(path) && path.startsWith(basedir)) {\n          try {\n            return path.toUri().toURL();\n          } catch (MalformedURLException x) {\n            // shh\n          }\n        }\n        return classloader.getResource(name);\n      };\n    }\n    return classloader::getResource;\n  }\n```\n\nIf we send `/static/WEB-INF/web.xml` it will fail to load it from the file system but will go into `classloader.getResource(name)` where name equals `/WEB-INF/web.xml` so will succeed and return the requested file. This way we can get any configuration file or even the application class files\n\nIf assets are configured for a certain extension we can still bypass it. eg:\n\n```java\nassets(\"/static/**/*.js\", Paths.get(\"static\"));\n```\n\nWe can send:\n\n```\nhttp://localhost:8080/static/io/yiss/App.class.js\n```\n\n#### Arbitrary class path resource access 2\nThis vulnerability also affects assets configured to access resources from the root of the class path. eg:\n\n```java\nassets(\"/static/**\");\n```\n\nIn this case we can traverse `static` by sending:\n\n```\nhttp://localhost:8080/static/..%252fio/yiss/App.class\n```\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue in [jooby](https://github.com/jooby-project/jooby/issues)\n* Email us at [support@jooby.io](mailto:support@jooby.io)",
+        "severity": "MODERATE",
+        "summary": "path traversal in Jooby"
+    },
+    {
+        "affects": {
+            "org.java-websocket:Java-WebSocket": [
+                "[,1.4.1]"
+            ]
+        },
+        "cve": "CVE-2020-11050",
+        "description": "The Java-WebSocket Client does not perform hostname verification.\n\n - This means that SSL certificates of other hosts are accepted as long as they are trusted. To exploit this vulnerability an attacker has to perform a man-in-the-middle (MITM) attack between a Java application using the Java-WebSocket Client and an WebSocket server it's connecting to.\n - TLS normally protects users and systems against MITM attacks, it cannot if certificates from other trusted hosts are accepted by the client.\n\nFor more information see: CWE-297: Improper Validation of Certificate with Host Mismatch - https://cwe.mitre.org/data/definitions/297.html\n\n## Important note\n\nThe OWASP Dependency-Check (https://jeremylong.github.io/DependencyCheck/index.html) may report that a dependency of your project is affected by this security vulnerability, but you don't use this lib.\nThis is caused by the fuzzy search in the OWASP implementation.\nCheck out this issue (https://github.com/TooTallNate/Java-WebSocket/issues/1019#issuecomment-628507934) for more information and a way to suppress the warning.",
+        "severity": "HIGH",
+        "summary": "Improper Validation of Certificate with Host Mismatch in Java-WebSocket"
+    },
+    {
+        "affects": {
+            "org.apache.beam:beam-sdks-java-io-mongodb": [
+                "[2.10.0,2.16.0]"
+            ]
+        },
+        "cve": "CVE-2020-1929",
+        "description": "The Apache Beam MongoDB connector in versions 2.10.0 to 2.16.0 has an option to disable SSL trust verification. However this configuration is not respected and the certificate verification disables trust verification in every case. This exclusion also gets registered globally which disables trust checking for any code running in the same JVM.",
+        "severity": "MODERATE",
+        "summary": "Improper Certificate Validation in Apache Beam"
+    },
+    {
+        "affects": {
+            "org.rundeck:rundeck": [
+                "[,3.2.6)"
+            ]
+        },
+        "cve": "CVE-2020-11009",
+        "description": "### Impact\n\nAuthenticated users can craft a request that reveals Execution data and logs  and Job details that they are not authorized to see.\n\n> Depending on the configuration and the way that Rundeck is used, this could result in anything between a high severity risk, or a very low risk. If access is tightly restricted and all users on the system have access to all projects, this is not really much of an issue. If access is wider and allows login for users that do not have access to any projects, or project access is restricted, there is a larger issue. If access is meant to be restricted and secrets, sensitive data, or intellectual property are exposed in Rundeck execution output and job data, the risk becomes much higher.\n\n### Details\n\nAn authenticated user could craft a request to:\n\n* View Executions and download execution logs without access to `read` or `view` the associated Job, or ad-hoc resource.\n* Get the list of running executions in a project, without Event `read` access, if they have `read` access to view the project.\n* View the Options definitions of a Job without access to view the Job.\n* View the definition of a workflow step of a Job without access to view the Job.\n* View the SCM diff of a modified Job definition if SCM is enabled, without Project `export` access level.\n* View the New User Profile Form for a different username, without User `admin` access. Note: they would not be allowed to create or modify a profile for a different user, or reveal any user profile information for a different user.\n\nSome authenticated API requests were not correctly checking appropriate authorization levels:\n\n* The list of running Executions would be sent without `read` access to Events.\n* The Plugin Input Parameters for a SCM plugin would be sent without authorization for project `import`,`scm_import`,`export`, or `scm_export` actions.\n* Job Retry action could retry an execution without `read` or `view` access to the Execution, which would reveal the Execution's option values. (`run` access to the Job was still required).\n\n### Patches\nUpgrade to Rundeck version 3.2.6\n\n### Workarounds\nNone\n\n### References\n[3.2.6 Release Notes](https://docs.rundeck.com/docs/history/3_2_x/version-3.2.6.html)\n\n### Report\nIf you have any questions or comments about this advisory:\n* Email us at [security@rundeck.com](mailto:security@rundeck.com)\n\nTo report security issues to Rundeck please use the form at [http://rundeck.com/security](http://rundeck.com/security)\n\nReporter: Justine Osborne of Apple Information Security",
+        "severity": "MODERATE",
+        "summary": "IDOR can reveal execution data and logs to unauthorized user in Rundeck"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-11619",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.springframework.aop.config.MethodLocatingFactoryBean (aka spring-aop).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-11113",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.openjpa.ee.WASRegistryManagedRuntime (aka openjpa).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-11111",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.activemq.* (aka activemq-jms, activemq-core, activemq-pool, and activemq-pool-jms).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-10968",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.aoju.bus.proxy.provider.remoting.RmiProvider (aka bus-proxy).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-10969",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to javax.swing.JEditorPane.",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-9546",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig (aka shaded hikari-config).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.0.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-9548",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to br.com.anteros.dbcp.AnterosDBCPConfig (aka anteros-core).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-11620",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.commons.jelly.impl.Embedded (aka commons-jelly).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-10672",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to org.apache.aries.transaction.jms.internal.XaPooledConnectionFactory (aka aries.transaction.jms).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.0.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-9547",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig (aka ibatis-sqlmap).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.0.0,2.9.10.3]"
+            ]
+        },
+        "cve": "CVE-2020-10673",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.4 mishandles the interaction between serialization gadgets and typing, related to com.caucho.config.types.ResourceRef (aka caucho-quercus).",
+        "severity": "MODERATE",
+        "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+        "affects": {
+            "com.shopizer:sm-core-model": [
+                "[,2.11.0)"
+            ]
+        },
+        "cve": "CVE-2020-11007",
+        "description": "### Impact\nUsing API or Controller based versions negative quantity is not adequately validated hence creating incorrect shopping cart and order total. \n\n### Patches\nAdding a back-end verification to check that quantity parameter isn't negative. If so, it is set to 1. Patched in 2.11.0\n\n### Workarounds\nWithout uprading, it's possible to just apply the fixes in the same files it's done for the patch. Or you use javax constraint validation on the quantity parameter.\n\n### References\n[Input Validation](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)\n[Using bean validation constraint](https://javaee.github.io/tutorial/bean-validation002.html)\n[Commits with fixes](https://github.com/shopizer-ecommerce/shopizer/commit/929ca0839a80c6f4dad087e0259089908787ad2a)\nCVE Details below : \n[Mitre](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11007)\n[NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-11007)\n\n### Credits\nFound and solved by Yannick Gosset from Aix-Marseille University cybersecurity\nmaster program supervised by Yassine Ilmi ",
+        "severity": "CRITICAL",
+        "summary": "Negative charge in shopping cart in Shopizer"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,9.0.3]"
+            ]
+        },
+        "cve": "CVE-2020-1728",
+        "description": "A vulnerability was found in all versions of Keycloak where, the pages on the Admin Console area of the application are completely missing general HTTP security headers in HTTP-responses. This does not directly lead to a security issue, yet it might aid attackers in their efforts to exploit other problems. The flaws unnecessarily make the servers more prone to Clickjacking, channel downgrade attacks and other similar client-based attack vectors.",
+        "severity": "MODERATE",
+        "summary": "Improper Restriction of Rendered UI Layers or Frames in Keycloak"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,8.0.2)"
+            ]
+        },
+        "cve": "CVE-2020-1731",
+        "description": "A flaw was found in all versions of the Keycloak operator, before version 8.0.2,(community only) where the operator generates a random admin password when installing Keycloak, however the password remains the same when deployed to the same OpenShift namespace.",
+        "severity": "HIGH",
+        "summary": "Predictable password in Keycloak"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,9.0.0)"
+            ]
+        },
+        "cve": "CVE-2020-1697",
+        "description": "It was found in all keycloak versions before 9.0.0 that links to external applications (Application Links) in the admin console are not validated properly and could allow Stored XSS attacks. An authed malicious user could create URLs to trick users in other realms, and possibly conduct further attacks.",
+        "severity": "LOW",
+        "summary": "XSS in Keycloak"
+    },
+    {
+        "affects": {
+            "org.sonatype.nexus:nexus-core": [
+                "[,3.21.2)"
+            ]
+        },
+        "cve": "CVE-2020-10203",
+        "description": "Sonatype Nexus Repository before 3.21.2 allows XSS.",
+        "severity": "LOW",
+        "summary": "Persistent Cross-Site scripting in Nexus Repository Manager"
+    },
+    {
+        "affects": {
+            "org.sonatype.nexus:nexus-core": [
+                "[,3.21.2)"
+            ]
+        },
+        "cve": "CVE-2020-10204",
+        "description": "Sonatype Nexus Repository before 3.21.2 allows Remote Code Execution.",
+        "severity": "HIGH",
+        "summary": "Remote Code Execution - JavaEL Injection (low privileged accounts) in Nexus Repository Manager"
+    },
+    {
+        "affects": {
+            "org.sonatype.nexus:nexus-extdirect": [
+                "[,3.21.2)"
+            ]
+        },
+        "cve": "CVE-2020-10199",
+        "description": "Sonatype Nexus Repository before 3.21.2 allows JavaEL Injection (issue 1 of 2).",
+        "severity": "HIGH",
+        "summary": "Nexus Repository Manager 3 - Remote Code Execution "
+    },
+    {
+        "affects": {
+            "io.dropwizard:dropwizard-validation": [
+                "[2.0.0,2.0.3)",
+                "[,1.3.21)"
+            ]
+        },
+        "cve": "CVE-2020-11002",
+        "description": "### Summary\n\nA server-side template injection was identified in the self-validating ([`@SelfValidating`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/SelfValidating.html)) feature of **dropwizard-validation** enabling attackers to inject arbitrary Java EL expressions, leading to Remote Code Execution (RCE) vulnerability.\n\nIf you're using a self-validating bean (via [`@SelfValidating`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/SelfValidating.html)), an upgrade to Dropwizard 1.3.21/2.0.3 or later is strongly recommended.\n\nThe changes introduced in Dropwizard 1.3.19 and 2.0.2 (see [GHSA-3mcp-9wr4-cjqf](https://github.com/dropwizard/dropwizard/security/advisories/GHSA-3mcp-9wr4-cjqf)/[CVE-2020-5245](https://github.com/advisories/GHSA-3mcp-9wr4-cjqf)) unfortunately didn't fix the underlying issue completely.\n\n### Impact\n\nThis issue may allow Remote Code Execution (RCE), allowing to run arbitrary code on the host system (with the privileges of the Dropwizard service account privileges) by injecting arbitrary [Java Expression Language (EL)](https://docs.jboss.org/hibernate/validator/6.1/reference/en-US/html_single/#section-interpolation-with-message-expressions) expressions when using the self-validating feature ([`@SelfValidating`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/SelfValidating.html), [`@SelfValidation`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/SelfValidation.html)) in **dropwizard-validation**.\n\n### Patches\n\nThe issue has been fixed in **dropwizard-validation** **1.3.21** and **2.0.3** or later. We strongly recommend upgrading to one of these versions.\n\nThe evaluation of EL expressions has been disabled by default now.\n\nIn order to use some interpolation in the violation messages added to [`ViolationCollector`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/ViolationCollector.html), it has to be explicitly allowed by setting [`SelfValidating#escapeExpressions()`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/SelfValidating.html#escapeExpressions--) to `false`.\n\nIt is also recommended to use the `addViolation` methods supporting message parameters instead of EL expressions introduced in Dropwizard 1.3.21 and 2.0.3:\n* [`ViolationCollector#addViolation(String, Map<String, Object>`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/ViolationCollector.html#addViolation-java.lang.String-java.util.Map-)\n* [`ViolationCollector#addViolation(String, String, Map<String, Object>`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/ViolationCollector.html#addViolation-java.lang.String-java.lang.String-java.util.Map-)\n* [`ViolationCollector#addViolation(String, String, Integer, Map<String, Object>`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/ViolationCollector.html#addViolation-java.lang.String-java.lang.Integer-java.lang.String-java.util.Map-)\n* [`ViolationCollector#addViolation(String, String, String, Map<String, Object>`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/ViolationCollector.html#addViolation-java.lang.String-java.lang.String-java.lang.String-java.util.Map-)\n\n\n### Workarounds\n\nIf you are not able to upgrade to one of the aforementioned versions of **dropwizard-validation** but still want to use the [`@SelfValidating`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.2/io/dropwizard/validation/selfvalidating/SelfValidating.html) feature, make sure to properly sanitize any message you're adding to the [`ViolationCollector`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/ViolationCollector.html) in the method annotated with [`@SelfValidation`](https://javadoc.io/static/io.dropwizard/dropwizard-project/2.0.3/io/dropwizard/validation/selfvalidating/SelfValidation.html).\n\nExample:\n```java\n@SelfValidation\npublic void validateFullName(ViolationCollector col) {\n    if (fullName.contains(\"_\")) {\n        // Sanitize fullName variable by escaping relevant characters such as \"$\"\n        col.addViolation(\"Full name contains invalid characters:  \" + sanitizeJavaEl(fullName));\n    }\n}\n```\n\nSee also:\nhttps://github.com/dropwizard/dropwizard/blob/v2.0.3/dropwizard-validation/src/main/java/io/dropwizard/validation/InterpolationHelper.java\n\n### References\n\n* https://github.com/dropwizard/dropwizard/security/advisories/GHSA-3mcp-9wr4-cjqf\n* https://github.com/dropwizard/dropwizard/pull/3208\n* https://github.com/dropwizard/dropwizard/pull/3209\n* https://docs.jboss.org/hibernate/validator/6.1/reference/en-US/html_single/#section-hibernateconstraintvalidatorcontext\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n* Open an issue in [dropwizard/dropwizard](https://github.com/dropwizard/dropwizard/issues/new)\n* Start a discussion on the [dropwizard-dev mailing list](https://groups.google.com/forum/#!forum/dropwizard-dev)\n\n### Security contact\n\nIf you want to responsibly disclose a security issue in Dropwizard or one of its official modules, please contact us via the published channels in our [security policy](https://github.com/dropwizard/dropwizard/security/policy):\n\nhttps://github.com/dropwizard/dropwizard/security/policy#reporting-a-vulnerability",
+        "severity": "HIGH",
+        "summary": "Remote Code Execution (RCE) vulnerability in dropwizard-validation"
+    },
+    {
+        "affects": {
+            "io.jooby:jooby-netty": [
+                "[,2.2.1)"
+            ]
+        },
+        "cve": "CVE-2020-7622",
+        "description": "### Impact\n\n - Cross Site Scripting\n - Cache Poisoning\n - Page Hijacking\n\n### Patches\n\nThis was fixed in version `2.2.1`.\n\n### Workarounds\n\nIf you are unable to update, ensure that user supplied data isn't able to flow to HTTP headers. If it does, pre-sanitize for CRLF characters.\n\n### References\n\n##### [CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')](https://cwe.mitre.org/data/definitions/113.html)\n\nI've been poking at libraries to see if they are vulnerable to HTTP Response Splitting and Jooby is my third case of finding this vulnerability.\n\n### Root Cause\n\nThis roots cause back to this line in the Jooby codebase:\n\nhttps://github.com/jooby-project/jooby/blob/93cfc80aa20c188f71a442ea7a1827da380e1c27/modules/jooby-netty/src/main/java/io/jooby/internal/netty/NettyContext.java#L102\n\nThe `DefaultHttpHeaders` takes a parameter `validate` which, when `true` (as it is for the no-arg constructor) validates that the header isn't being abused to do HTTP Response Splitting.\n\n### Reported By\n\nThis vulnerability was reported by @JLLeitschuh ([Twitter](https://twitter.com/JLLeitschuh))\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue in [jooby-project/jooby](https://github.com/jooby-project/jooby/issues)",
+        "severity": "MODERATE",
+        "summary": "Improper Neutralization of CRLF Sequences in HTTP Headers in Jooby ('HTTP Response Splitting)"
+    },
+    {
+        "affects": {
+            "org.mitre:openid-connect-server": [
+                "[,1.3.3]"
+            ]
+        },
+        "cve": "CVE-2020-5497",
+        "description": "The OpenID Connect reference implementation for MITREid Connect through 1.3.3 allows XSS due to userInfoJson being included in the page unsanitized. This is related to header.tag. The issue can be exploited to execute arbitrary JavaScript.",
+        "severity": "MODERATE",
+        "summary": "XSS in MITREid Connect"
+    },
+    {
+        "affects": {
+            "io.micronaut:micronaut-http-client": [
+                "[1.3.0,1.3.2)",
+                "[,1.2.11)"
+            ]
+        },
+        "cve": "CVE-2020-7611",
+        "description": "### Vulnerability\n\nMicronaut's HTTP client is vulnerable to \"HTTP Request Header Injection\" due to not validating request headers passed to the client.\n\nExample of vulnerable code:\n\n```java\n@Controller(\"/hello\")\npublic class HelloController {\n\n    @Inject\n    @Client(\"/\")\n    RxHttpClient client;\n\n    @Get(\"/external-exploit\")\n    @Produces(MediaType.TEXT_PLAIN)\n    public String externalExploit(@QueryValue(\"header-value\") String headerValue) {\n        return client.toBlocking().retrieve(\n            HttpRequest.GET(\"/hello\")\n                .header(\"Test\", headerValue)\n        );\n    }\n}\n```\n\nIn the above case a query value received from a user is passed as a header value to the client. Since the client doesn't validate the header value the request headers and body have the potential to be manipulated.\n\nFor example, a user that supplies the following payload, can force the client to make multiple attacker-controlled HTTP requests.\n\n```java\nList<String> headerData = List.of(\n    \"Connection: Keep-Alive\", // This keeps the connection open so another request can be stuffed in.\n    \"\",\n    \"\",\n    \"POST /hello/super-secret HTTP/1.1\",\n    \"Host: 127.0.0.1\",\n    \"Content-Length: 31\",\n    \"\",\n    \"{\\\"new\\\":\\\"json\\\",\\\"content\\\":\\\"here\\\"}\",\n    \"\",\n    \"\"\n);\nString headerValue = \"H\\r\\n\" + String.join(\"\\r\\n\", headerData);;\nURI theURI =\n    UriBuilder\n        .of(\"/hello/external-exploit\")\n        .queryParam(\"header-value\", headerValue) // Automatically URL encodes data\n        .build();\nHttpRequest<String> request = HttpRequest.GET(theURI);\nString body = client.toBlocking().retrieve(request);\n```\n\nNote that using `@HeaderValue` instead of `@QueryValue` is not vulnerable since Micronaut's HTTP server does validate the headers passed to the server, so the exploit can only be triggered by using user data that is not an HTTP header (query values, form data etc.).\n\n### Impact\n\nThe attacker is able to control the entirety of the HTTP body for their custom requests.\nAs such, this vulnerability enables attackers to perform a variant of [Server Side Request Forgery](https://cwe.mitre.org/data/definitions/918.html).\n\n### Patches\n\nThe problem has been patched in the `micronaut-http-client` versions 1.2.10 and 1.3.1 and above.\n\n### Workarounds\n\nDo not pass user data directly received from HTTP request parameters as headers in the HTTP client.\n\n### References\n\nFix commits\n- https://github.com/micronaut-projects/micronaut-core/commit/9d1eff5c8df1d6cda1fe00ef046729b2a6abe7f1\n- https://github.com/micronaut-projects/micronaut-core/commit/6deb60b75517f80c57b42d935f07955c773b766d\n- https://github.com/micronaut-projects/micronaut-core/commit/bc855e439c4a5ced3d83195bb59d0679cbd95add\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n* Open an issue in [micronaut-core](https://github.com/micronaut-projects/micronaut-core)\n* Email us at [info@micronaut.io](mailto:info@micronaut.io)\n\n### Credit\n\nOriginally reported by @JLLeitschuh ",
+        "severity": "MODERATE",
+        "summary": "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request Header Injection')"
+    },
+    {
+        "affects": {
+            "com.yahoo.elide:elide-core": [
+                "[,4.5.14)"
+            ]
+        },
+        "cve": "CVE-2020-5289",
+        "description": "### Impact\nIt is possible for an adversary to \"guess and check\" the value of a model field they do not have access to assuming they can read at least one other field in the model.  The adversary can construct filter expressions for an inaccessible field to filter a collection.  The presence or absence of models in the returned collection can be used to reconstruct the value of the inaccessible field.\n\nFor example, a User model has two fields: _name_ and _role_.  The adversary has read permissions to see the _name_ field of the User collection but not the _role_.  By constructing a filter like the one below, the adversary can determine which users have admin role by presence or absence in the returned collection:\n`filter=role==\"Admin\"`\n\n### Patches\nResolved in Elide 4.5.14 and greater.\n\n### Workarounds\nThe adversary can only access the fields if a model includes fields with different read permission levels (some less secure and some more secure).  Model security can be adjusted by restricting read permissions on existing models.\n\n### References\nFixed in https://github.com/yahoo/elide/pull/1236\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue in [elide](https://github.com/yahoo/elide)\n* Contact us at [spectrum](https://spectrum.chat/elide?tab=posts)",
+        "severity": "HIGH",
+        "summary": "Read permissions not enforced for client provided filter expressions in Elide."
+    },
+    {
+        "affects": {
+            "org.http4s:http4s-server_2.12": [
+                "[0.21.0,0.21.2)",
+                "[0.19.0,0.20.20)",
+                "[,0.18.26)"
+            ]
+        },
+        "cve": "CVE-2020-5280",
+        "description": "### Impact\n\nThis vulnerability applies to all users of:\n* `org.http4s.server.staticcontent.FileService`\n* `org.http4s.server.staticcontent.ResourceService`\n* `org.http4s.server.staticcontent.WebjarService`\n\n#### Path escaping\n\nURI normalization is applied incorrectly.  Requests whose path info contain `../` or `//` can expose resources outside of the configured location.  Specifically:\n\n* `FileService` may expose any file on the local file system.\n* `ResourceService` may expose any resource on the class path.\n\n#### Prefix matching\n\nWhen the service is configured with a non-empty `pathPrefix` that doesn't end in a slash, any directories whose names are a prefix of `systemPath` (from `FileService`) or `pathPrefix` (from `ResourceService`) are exposed.  For example, if `pathPrefix` is `/foo` and `systemPath` is `/bar`, a request to `/foobaz/quux.txt` exposes file `/barbaz/quux.txt`, when only files beneath `/bar` should be available.\n\n#### URI decoding\n\nURI segments are not decoded before resource resolution.  This causes resources with reserved characters in their name to incorrectly return a 404.  It also may incorrectly expose the rare resource whose name is URI encoded.  This applies to `FileService`, `ResourceService`, and `WebjarService`.\n\n### Patches\n\nIn all three services, paths with an empty segment, a `.` segment, or a `..` segment are now rejected with a `400 Bad Request` response.  This fixes exposure outside the configured root.  Many clients already eliminate dot segments according to the rules in [RFC3986, Section 5.2.4](https://tools.ietf.org/html/rfc3986#section-5.2.4).  A middleware that does so at the server level may be considered if there is demand.\n\nIf `pathInfo` is non-empty, and does not begin with `/`, then a 404 response is generated.  This fixes the prefix matching exposure.\n\nAll path segments are URI decoded before being passed to the file system or resource path.  This allows resolution of resources with reserved characters in the name, and prevents incorrect exposure of resources whose names are themselves URI encoded.\n\n### Workarounds\n\nThe recommended course is to upgrade:\n* v0.18.26, binary compatible with the 0.18.x series\n* v0.20.20, binary compatible with the 0.20.x series\n* v0.21.2, binary compatible with the 0.21.x series\n\nNote that 0.19.0 is a deprecated release and has never been supported.\n\nIf an upgrade is impossible:\n\n* Temporarily copy `FileService.scala`, `ResourceService.scala`, and `WebjarService.scala` from the appropriate release series into your project and recompile with that, changing the package name and reference in your application.\n* Users of a servlet backend can use the servlet container's file serving capabilities.\n\n### Credits\n\nThank you to Thomas G\u00f8ytil for the discovery, responsible disclosure, and assistance testing of this vulnerability.\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue in [http4s/http4s](http://github.com/http4s/http4s)\n* Email a maintainer:\n  * [Ross A. Baker](mailto:ross@rossabaker.com)",
+        "severity": "CRITICAL",
+        "summary": "Local file inclusion vulnerability in http4s"
+    },
+    {
+        "affects": {
+            "com.hotels.styx:styx-api": [
+                "[,1.0.0.beta8]"
+            ]
+        },
+        "cve": "CVE-2020-6858",
+        "description": "# Vulnerability\nStyx is vulnerable to CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers (&#39;HTTP Response Splitting&#39;).\n\n# Vulnerable Component\nThe vulnerable component is the `com.hotels.styx.api.HttpHeaders.Builder` due to disabling the HTTP Header validation built into Netty in these locations:\n\nhttps://github.com/HotelsDotCom/styx/blob/e1d578e9b9c38df9cd19c21dc2eb9b949d85b558/components/api/src/main/java/com/hotels/styx/api/HttpHeaders.java#L145\n\nhttps://github.com/HotelsDotCom/styx/blob/e1d578e9b9c38df9cd19c21dc2eb9b949d85b558/components/api/src/main/java/com/hotels/styx/api/HttpHeaders.java#L145\n\n`new DefaultHttpHeaders(false)` disables the built-in validation in Netty. Either use the default constructor or `new DefaultHttpHeaders(true`  instead.\n\nAdditionally, another vulnerable component is the StyxToNettyResponseTranslator due to also disabling the HTTP Header validation built into netty in this location.\n\nhttps://github.com/HotelsDotCom/styx/blob/8d60e5493e65d0d536afc0b350dcb02d24e0f7a7/components/server/src/main/java/com/hotels/styx/server/netty/connectors/StyxToNettyResponseTranslator.java#L30\n\n `DefaultHttpResponse nettyResponse = new DefaultHttpResponse(version, httpResponseStatus, false); `\n`new DefaultHttpResponse(version, httpResponseStatus, false);` disables the built-in validation in Netty. Please use the constructor `new DefaultHttpResponse(version, httpResponseStatus, true);`\n\n# Proof of Concept\nThe following test plugin proves that there is no header validation occurring.\n\n```java\n    static class VulnerablePlugin implements Plugin {\n\n        @Override\n        public Eventual&lt;LiveHttpResponse&gt; intercept(LiveHttpRequest request, Chain chain) {\n            String header = request.queryParam(&quot;header-value&quot;).get();\n            LiveHttpRequest newRequest = request.newBuilder()\n                .header(&quot;myRequestHeader&quot;, header)\n                .build();\n            return chain.proceed(newRequest).map(response -&gt;\n                response.newBuilder().header(&quot;myResponseHeader&quot;, header).build()\n            ) ;\n        }\n\n    }\n\n    @Test\n    public void simpleHeaderInjectionVulnerabilityPOC() {\n        Plugin vulnerablePlugin = new VulnerablePlugin();\n        // a simple way to mock the downstream system\n        HttpInterceptor.Chain chain = request -&gt; {\n            assertThat(request.header(&quot;myRequestHeader&quot;).orElse(null), is(&quot;test\\r\\nAnother: CRLF_Injection&quot;));\n            return Eventual.of(response(OK).build());\n        };\n\n        // an example request you expect your plugin to receive\n        String encodedGet = URLEncoder.encode(&quot;test\\r\\nAnother: CRLF_Injection&quot;);\n        LiveHttpRequest request = get(&quot;/foo?header-value=&quot; + encodedGet)\n            .build();\n\n        // since this is a test, we want to wait for the response\n        LiveHttpResponse response = Mono.from(vulnerablePlugin.intercept(request, chain)).block();\n\n        assertThat(response.header(&quot;myResponseHeader&quot;).orElse(null), is(&quot;test\\r\\nAnother: CRLF_Injection&quot;));\n    }\n```\nAdditionally, if you run this LiveHttpResponse from this test through the `StyxToNettyResponseTranslator::toNettyResponse`, ideally, it would have caused an exception to be thrown. In its current state, it does not.\n\n# Similar Vulnerabilities\nThere have been reports of similar vulnerabilities in other popular libraries.\n\nGHSA-35fr-h7jr-hh86 -&gt; CVE-2019-16771\nGHSA-mvqp-q37c-wf9j -&gt; CVE-2019-17513\n\n\n# Finding\nThis vulnerability was found due to this query that [Jonathan Leitschuh](https://twitter.com/jlleitschuh) contributed to the Semmle QL project.\nhttps://lgtm.com/rules/1510696449842/alerts/",
+        "severity": "MODERATE",
+        "summary": "HTTP Response Splitting in Styx"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.2]",
+                "[2.8.0,2.8.11.4]",
+                "[2.7.0,2.7.9.6]",
+                "[2.6.0,2.6.7.3]",
+                "[2.5.0,2.5.5]",
+                "[2.4.0,2.4.6.1]",
+                "[2.3.0,2.3.5]",
+                "[2.2.0,2.2.4]",
+                "[2.1.0,2.1.5]",
+                "[2.0.0,2.0.6]"
+            ]
+        },
+        "cve": "CVE-2020-8840",
+        "description": "FasterXML jackson-databind 2.0.0 through 2.9.10.2 lacks certain xbean-reflect/JNDI blocking, as demonstrated by org.apache.xbean.propertyeditor.JndiConverter.",
+        "severity": "HIGH",
+        "summary": "Deserialization of Untrusted Data in jackson-databind"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat:tomcat": [
+                "[9.0.0,9.0.31)",
+                "[8.0.0,8.5.51)",
+                "[,7.0.100)"
+            ],
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[9.0.0,9.0.31)",
+                "[8.0.0,8.5.51)",
+                "[,7.0.100)"
+            ]
+        },
+        "cve": "CVE-2020-1935",
+        "description": "In Apache Tomcat 9.0.0.M1 to 9.0.30, 8.5.0 to 8.5.50 and 7.0.0 to 7.0.99 the HTTP header parsing code used an approach to end-of-line parsing that allowed some invalid HTTP headers to be parsed as valid. This led to a possibility of HTTP Request Smuggling if Tomcat was located behind a reverse proxy that incorrectly handled the invalid Transfer-Encoding header in a particular manner. Such a reverse proxy is considered unlikely.",
+        "severity": "MODERATE",
+        "summary": "Potential HTTP request smuggling in Apache Tomcat"
+    },
+    {
+        "affects": {
+            "io.dropwizard:dropwizard-validation": [
+                "[2.0.0,2.0.2)",
+                "[,1.3.19)"
+            ]
+        },
+        "cve": "CVE-2020-5245",
+        "description": "Dropwizard-Validation before 1.3.19, and 2.0.2 may allow arbitrary code execution on the host system, with the privileges of the Dropwizard service account, by injecting arbitrary Java Expression Language expressions when using the self-validating feature.\n\nThe issue has been fixed in dropwizard-validation 1.3.19 and 2.0.2.",
+        "severity": "HIGH",
+        "summary": "Remote Code Execution (RCE) vulnerability in dropwizard-validation"
+    },
+    {
+        "affects": {
+            "io.netty:netty-handler": [
+                "[4.1.43,4.1.44]"
+            ]
+        },
+        "cve": "CVE-2020-7238",
+        "description": "Netty 4.1.43.Final allows HTTP Request Smuggling because it mishandles Transfer-Encoding whitespace (such as a [space]Transfer-Encoding:chunked line) and a later Content-Length header. This issue exists because of an incomplete fix for CVE-2019-16869.",
+        "severity": "MODERATE",
+        "summary": "HTTP Request Smuggling in Netty"
+    },
+    {
+        "affects": {
+            "org.apache.olingo:odata-client-core": [
+                "[4.0.0,4.7.0]"
+            ]
+        },
+        "cve": "CVE-2020-1925",
+        "description": "Apache Olingo versions 4.0.0 to 4.7.0 provide the AsyncRequestWrapperImpl class which reads a URL from the Location header, and then sends a GET or DELETE request to this URL. It may allow to implement a SSRF attack. If an attacker tricks a client to connect to a malicious server, the server can make the client call any URL including internal resources which are not directly accessible by the attacker.",
+        "severity": "MODERATE",
+        "summary": "Server-Side Request Forgery (SSRF) in Apache Olingo"
+    },
+    {
+        "affects": {
+            "org.opencastproject:opencast-kernel": [
+                "[8.0,8.1)",
+                "[,7.6)"
+            ]
+        },
+        "cve": "CVE-2020-5206",
+        "description": "### Impact\n\nUsing a remember-me cookie with an arbitrary username can cause Opencast to assume proper authentication for that user even if the remember-me cookie was incorrect given that the attacked endpoint also allows anonymous access.\n\nThis way, an attacker can, for example, fake a remember-me token, assume the identity of the global system administrator and request non-public content from the search service without ever providing any proper authentication.\n\n\n### Patches\n\nThis problem is fixed in Opencast 7.6 and Opencast 8.1\n\n\n### Workarounds\n\nAs a workaround for older, unpatched versions, disabling remember-me cookies in `etc/security/mh_default_org.xml` will mitigate the problem but will obviously also disable this feature without obvious indication. To deactivate this, remove the following line from the security configuration:\n\n```xml\n<sec:remember-me \u2026 />\n```\n\n### References\n\n- [Remember-me cookie in the security configuration file](https://github.com/opencast/opencast/blob/161ee619382f144dc35eea211fc6b556025b98e1/etc/security/mh_default_org.xml#L335-L336)\n\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [opencast/opencast](https://github.com/opencast/opencast/issues)\n- For security-relevant information, email us at security@opencast.org",
+        "severity": "CRITICAL",
+        "summary": "Authentication Bypass For Endpoints With Anonymous Access in OpenCast"
+    },
+    {
+        "affects": {
+            "org.opencastproject:opencast-kernel": [
+                "[8.0,8.1)",
+                "[,7.6)"
+            ]
+        },
+        "cve": "CVE-2020-5231",
+        "description": "### Impact\n\nUsers with the role `ROLE_COURSE_ADMIN` can use the user-utils endpoint to create new users not including the role `ROLE_ADMIN`. For example:\n\n```bash\n# Use the admin to create a new user with ROLE_COURSE_ADMIN using the admin user.\n# We expect this to work.\n% curl -i -u admin:opencast 'https://example.opencast.org/user-utils/xy.json' -X PUT \\\n  --data 'password=f&roles=%5B%22ROLE_COURSE_ADMIN%22%5D'\nHTTP/2 201\n\n# Use the new user to create more new users.\n# We don't exp\u00fcect a user with just role ROLE_COURSE_ADMIN to succeed.\n# But it does work\n% curl -i -u xy:f 'https://example.opencast.org/user-utils/ab.json' -X PUT \\\n  --data 'password=f&roles=%5B%22ROLE_COURSE_ADMIN%22%5D'\nHTTP/2 201\n```\n`ROLE_COURSE_ADMIN` is a non-standard role in Opencast which is referenced neither in the documentation nor in any code (except for tests) but only in the security configuration. From the name \u2013 implying an admin for a specific course \u2013 users would never expect that this role allows user creation.\n\n### Patches\n\nThis issue is fixed in 7.6 and 8.1 which both ship a new default security configuration.\n\n### Workarounds\n\nYou can fix this issue by removing all instances of `ROLE_COURSE_ADMIN` in your organization's security configuration (`etc/security/mh_default_org.xml` by default).\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [opencast/opencast](https://github.com/opencast/opencast/issues)\n- For security-relevant information, email us at security@opencast.org",
+        "severity": "MODERATE",
+        "summary": "Users with ROLE_COURSE_ADMIN can create new users in OpenCast"
+    },
+    {
+        "affects": {
+            "org.opencastproject:opencast-kernel": [
+                "[8.0,8.1)",
+                "[,7.6)"
+            ]
+        },
+        "cve": "CVE-2020-5222",
+        "description": "### Impact\n\nThe security configuration in `etc/security/mh_default_org.xml` enables a remember-me cookie based on a hash created from the [username, password, and an additional system key](https://docs.spring.io/spring-security/site/docs/3.0.x/reference/remember-me.html). Opencast has hard-coded this system key in the large XML file and never mentions to change this, basically ensuring that all systems use the same key:\n\n```xml\n<sec:remember-me key=\"opencast\" user-service-ref=\"userDetailsService\" />\n```\n\nThis means that an attacker getting access to a remember-me token for one server can get access to all servers which allow log-in using the same credentials without ever needing the credentials. For example, a remember-me token obtained from develop.opencast.org can be used on stable.opencast.org without actually knowing the log-in credentials.\n\nSuch an attack will usually not work on different installations \u2013 assuming that safe, unique passwords are used \u2013 but it is basically guaranteed to work to get access to all machines of one cluster if a token from one machine is compromised.\n\n### Patches\n\nThis problem is fixed in Opencast 7.6 and Opencast 8.1\n\n### Workarounds\n\nWe strongly recommend updating to the patched version. Still, as a workaround for older versions, in `etc/security/mh_default_org.xml`, set a custom key for each server:\n\n```xml\n<sec:remember-me key=\"CUSTOM_RANDOM_KEY\" user-service-ref=\"userDetailsService\" />\n```\n\n### References\n\n- [Relevant lines in the security configuration](https://github.com/opencast/opencast/blob/161ee619382f144dc35eea211fc6b556025b98e1/etc/security/mh_default_org.xml#L335-L336)\n- [Spring Security Remember-Me Authentication Documentation](https://docs.spring.io/spring-security/site/docs/3.0.x/reference/remember-me.html#remember-me-hash-token)\n\n### For more information\nIf you have any questions or comments about this advisory:\n- Open an issue in [opencast/opencast](https://github.com/opencast/opencast/issues)\n- For security-relevant information, email us at [security@opencast.org](mailto:security@opencast.org)\n\n### Thanks\nThanks to @LukasKalbertodt for reporting the issue.",
+        "severity": "MODERATE",
+        "summary": "Hard-Coded Key Used For Remember-me Token in OpenCast"
+    },
+    {
+        "affects": {
+            "org.opencastproject:base": [
+                "[8.0,8.1)",
+                "[,7.6)"
+            ]
+        },
+        "cve": "CVE-2020-5230",
+        "description": "### Impact\n\nOpencast allows almost arbitrary identifiers for media packages and\nelements to be used. This can be problematic for operation and security\nsince such identifiers are sometimes used for file system operations\nwhich may lead to an attacker being able to escape working directories and\nwrite files to other locations.\n\nIn addition, Opencast's Id.toString(\u2026) vs Id.compact(\u2026) behavior,\nthe latter trying to mitigate some of the file system problems, can\ncause errors due to identifier mismatch since an identifier may\nunintentionally change.\n\n### Patches\n\nThis issue is fixed in Opencast 7.6 and 8.1.\n\n### Workarounds\n\nThere is no workaround for this.\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [opencast/opencast](https://github.com/opencast/opencast/issues)\n- For security-relevant information, email us at security@opencast.org",
+        "severity": "MODERATE",
+        "summary": "Unsafe Identifiers in Opencast"
+    },
+    {
+        "affects": {
+            "org.opencastproject:opencast-common-jpa-impl": [
+                "[8.0,8.1)",
+                "[,7.6)"
+            ]
+        },
+        "cve": "CVE-2020-5229",
+        "description": "### Impact\n\nUser passwords are stored in the database using the rather outdated and cryptographically insecure MD5 hash algorithm. Furthermore, the hashes are salted using the username instead of a random salt, causing hashes for users with the same username and password to collide which is problematic especially for popular users like the default `admin` user.\n\nThis essentially means that for an attacker, it might be feasible to reconstruct a user's password given access to these hashes.\n\nNote that attackers needing access to the hashes means that they must gain access to the database in which these are stored first to be able to start cracking the passwords.\n\n\n### Patches\n\nThe problem is addressed in Opencast 8.1 which now uses the modern and much stronger bcrypt password hashing algorithm for storing passwords. Note, that old hashes remain MD5 until the password is updated.\n\nFor a list of users whose password hashes are stored using MD5, take a look at the `/user-utils/users/md5.json` REST endpoint.\n\n\n### Workarounds\n\nThere is no workaround.\n\n### References\n\n- [MD5 (Wikipedia)](https://en.wikipedia.org/wiki/MD5)\n- [bcrypt (Wikipedia)](https://en.wikipedia.org/wiki/Bcrypt)\n- [How weak is MD5 as a password hashing function?](https://security.stackexchange.com/q/52461)\n\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [opencast/opencast](https://github.com/opencast/opencast/issues)\n- For security-relevant information, email us at security@opencast.org",
+        "severity": "LOW",
+        "summary": "Password Hashing: Do not use MD5"
+    },
+    {
+        "affects": {
+            "org.opencastproject:opencast-oaipmh-api": [
+                "[8.0,8.1)",
+                "[,7.6)"
+            ]
+        },
+        "cve": "CVE-2020-5228",
+        "description": "### Impact\n\nMedia publication via OAI-PMH allows unauthenticated public access to all media and metadata by default. OAI-PMH is part of the default workflow and is activated by default, requiring active user intervention of users to protect media. This leads to users unknowingly handing out public access to events without their knowledge.\n\n\n### Patches\n\nThe problem has been addressed in Opencast 7.6 and 8.1 where the OAI-PMH endpoint is configured to require users with `ROLE_ADMIN` by default. In addition to this, Opencast 9 removes the OAI-PMH publication from the default workflow, making the publication a conscious decision users have to make by updating their workflows.\n\n### Workarounds\n\nIn the organization security configuration (`etc/security/mh_default_org.xml`), change the roles required for accessing `/oaipmh` from `ROLE_ANONYMOUS` to `ROLE_ADMIN`.\n\n### References\n\n- [Public access configuration in the organization's security configuration](https://github.com/opencast/opencast/blob/1fb812c7810c78f09f29a7f455ff920417924307/etc/security/mh_default_org.xml#L271-L276)\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [opencast/opencast](https://github.com/opencast/opencast/issues)\n- For security-relevant information, email us at security@opencast.org",
+        "severity": "HIGH",
+        "summary": "Unauthenticated Access Via OAI-PMH"
+    },
+    {
+        "affects": {
+            "io.ktor:ktor-server-cio": [
+                "[,1.3.0)"
+            ],
+            "io.ktor:ktor-client-cio": [
+                "[,1.3.0)"
+            ]
+        },
+        "cve": "CVE-2020-5207",
+        "description": "### Impact\nRequest smuggling is possible when running behind a proxy that doesn't handle Content-Length and Transfer-Encoding properly or doesn't handle alone \\n as a headers separator.\n\n### Patches\nhttps://github.com/ktorio/ktor/pull/1547\n\n### Workarounds\nNone except migrating to a better proxy.\n\n### References\nhttps://portswigger.net/web-security/request-smuggling\nhttps://tools.ietf.org/html/rfc7230#section-9.5",
+        "severity": "LOW",
+        "summary": "Request smuggling is possible when both chunked TE and content length specified"
+    },
+    {
+        "affects": {
+            "org.springframework:spring-webflux": [
+                "[5.2.0,5.2.3)"
+            ],
+            "org.springframework:spring-webmvc": [
+                "[5.2.0,5.2.3)"
+            ]
+        },
+        "cve": "CVE-2020-5397",
+        "description": "Spring Framework, versions 5.2.x prior to 5.2.3 are vulnerable to CSRF attacks through CORS preflight requests that target Spring MVC (spring-webmvc module) or Spring WebFlux (spring-webflux module) endpoints. Only non-authenticated endpoints are vulnerable because preflight requests should not include credentials and therefore requests should fail authentication. However a notable exception to this are Chrome based browsers when using client certificates for authentication since Chrome sends TLS client certificates in CORS preflight requests in violation of spec requirements. No HTTP body can be sent or received as a result of this attack.",
+        "severity": "LOW",
+        "summary": "CSRF attack via CORS preflight requests with Spring MVC or Spring WebFlux"
+    },
+    {
+        "affects": {
+            "org.springframework:spring-webflux": [
+                "[5.0.0,5.0.16)",
+                "[5.1.0,5.1.13)",
+                "[5.2.0,5.2.3)"
+            ],
+            "org.springframework:spring-webmvc": [
+                "[5.0.0,5.0.16)",
+                "[5.1.0,5.1.13)",
+                "[5.2.0,5.2.3)"
+            ]
+        },
+        "cve": "CVE-2020-5398",
+        "description": "In Spring Framework, versions 5.2.x prior to 5.2.3, versions 5.1.x prior to 5.1.13, and versions 5.0.x prior to 5.0.16, an application is vulnerable to a reflected file download (RFD) attack when it sets a \"Content-Disposition\" header in the response where the filename attribute is derived from user supplied input.",
+        "severity": "HIGH",
+        "summary": "RFD attack via Content-Disposition header sourced from request input by Spring MVC or Spring WebFlux Application"
+    }
+]

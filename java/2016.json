@@ -1,0 +1,510 @@
+[
+    {
+        "affects": {
+            "org.apache.hive:hive-exec": [
+                "2.0.0",
+                "[,1.2.2)"
+            ],
+            "org.apache.hive:hive-service": [
+                "2.0.0",
+                "[,1.2.2)"
+            ],
+            "org.apache.hive:hive": [
+                "2.0.0",
+                "[,1.2.2)"
+            ]
+        },
+        "cve": "CVE-2016-3083",
+        "description": "Apache Hive (JDBC + HiveServer2) implements SSL for plain TCP and HTTP connections (it supports both transport modes). While validating the server's certificate during the connection setup, the client in Apache Hive before 1.2.2 and 2.0.x before 2.0.1 doesn't seem to be verifying the common name attribute of the certificate. In this way, if a JDBC client sends an SSL request to server abc.com, and the server responds with a valid certificate (certified by CA) but issued to xyz.com, the client will accept that as a valid certificate and the SSL handshake will go through.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hive:hive, org.apache.hive:hive-exec, and org.apache.hive:hive-service"
+    },
+    {
+        "affects": {
+            "org.apache.karaf:apache-karaf": [
+                "[,4.0.8)"
+            ]
+        },
+        "cve": "CVE-2016-8750",
+        "description": "Apache Karaf prior to 4.0.8 used the LDAPLoginModule to authenticate users to a directory via LDAP. However, it did not encoding usernames properly and hence was vulnerable to LDAP injection attacks leading to a denial of service.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.karaf:apache-karaf"
+    },
+    {
+        "affects": {
+            "commons-fileupload:commons-fileupload": [
+                "[,1.3.3)"
+            ]
+        },
+        "cve": "CVE-2016-1000031",
+        "description": "Apache Commons FileUpload before 1.3.3 DiskFileItem File Manipulation Remote Code Execution",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects commons-fileupload:commons-fileupload"
+    },
+    {
+        "affects": {
+            "commons-fileupload:commons-fileupload": [
+                "[,1.3.2)"
+            ]
+        },
+        "cve": "CVE-2016-3092",
+        "description": "The MultipartStream class in Apache Commons Fileupload before 1.3.2, as used in Apache Tomcat 7.x before 7.0.70, 8.x before 8.0.36, 8.5.x before 8.5.3, and 9.x before 9.0.0.M7 and other products, allows remote attackers to cause a denial of service (CPU consumption) via a long boundary string.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects commons-fileupload:commons-fileupload"
+    },
+    {
+        "affects": {
+            "org.dspace:dspace-xmlui": [
+                "[5.0,5.5.)",
+                "[,4.5)"
+            ]
+        },
+        "cve": "CVE-2016-10726",
+        "description": "The XMLUI feature in DSpace before 3.6, 4.x before 4.5, and 5.x before 5.5 allows directory traversal via the themes/ path in an attack with two or more arbitrary characters and a colon before a pathname, as demonstrated by a themes/Reference/aa:etc/passwd URI.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.dspace:dspace-xmlui"
+    },
+    {
+        "affects": {
+            "com.adobe.xmp:xmpcore": [
+                "[,5.1.3)"
+            ]
+        },
+        "cve": "CVE-2016-4216",
+        "description": "XMPCore in Adobe XMP Toolkit for Java before 5.1.3 allows remote attackers to read arbitrary files via XML data containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.adobe.xmp:xmpcore"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.3.0,9.3.9)"
+            ]
+        },
+        "cve": "CVE-2016-4800",
+        "description": "The path normalization mechanism in PathResource class in Eclipse Jetty 9.3.x before 9.3.9 on Windows allows remote attackers to bypass protected resource restrictions and other security constraints via a URL with certain escaped characters, related to backslashes.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "org.springframework.security.oauth:spring-security-oauth2": [
+                "[,2.0.10)"
+            ]
+        },
+        "cve": "CVE-2016-4977",
+        "description": "When processing authorization requests using the whitelabel views in Spring Security OAuth 2.0.0 to 2.0.9 and 1.0.0 to 1.0.5, the response_type parameter value was executed as Spring SpEL which enabled a malicious user to trigger remote code execution via the crafting of the value for response_type.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework.security.oauth:spring-security-oauth2"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000345",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the DHIES/ECIES CBC mode vulnerable to padding oracle attack. For BC 1.55 and older, in an environment where timings can be easily observed, it is possible with enough observations to identify when the decryption is failing due to padding.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.dataformat:jackson-dataformat-xml": [
+                "[2.8.0,2.8.4)",
+                "[,2.7.8)"
+            ]
+        },
+        "cve": "CVE-2016-7051",
+        "description": "XmlMapper in the Jackson XML dataformat component (aka jackson-dataformat-xml) before 2.7.8 and 2.8.x before 2.8.4 allows remote attackers to conduct server-side request forgery (SSRF) attacks via vectors related to a DTD.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.fasterxml.jackson.dataformat:jackson-dataformat-xml"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.dataformat:jackson-dataformat-xml": [
+                "[,2.7.4)"
+            ]
+        },
+        "cve": "CVE-2016-3720",
+        "description": "XML external entity (XXE) vulnerability in XmlMapper in the Data format extension for Jackson (aka jackson-dataformat-xml) allows attackers to have unspecified impact via unknown vectors.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.fasterxml.jackson.dataformat:jackson-dataformat-xml"
+    },
+    {
+        "affects": {
+            "org.owasp.antisamy:antisamy": [
+                "[,1.5.5)"
+            ]
+        },
+        "cve": "CVE-2016-10006",
+        "description": "In OWASP AntiSamy before 1.5.5, by submitting a specially crafted input (a tag that supports style with active content), you could bypass the library protections and supply executable code. The impact is XSS.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.owasp.antisamy:antisamy"
+    },
+    {
+        "affects": {
+            "org.apache.cxf.fediz:fediz-spring2": [
+                "1.3.0",
+                "[1.2.0,1.2.3)"
+            ],
+            "org.apache.cxf.fediz:fediz-spring": [
+                "1.3.0",
+                "[1.2.0,1.2.3)"
+            ]
+        },
+        "cve": "CVE-2016-4464",
+        "description": "The application plugins in Apache CXF Fediz 1.2.x before 1.2.3 and 1.3.x before 1.3.1 do not match SAML AudienceRestriction values against configured audience URIs, which might allow remote attackers to have bypass intended restrictions and have unspecified other impact via a crafted SAML token with a trusted signature.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.cxf.fediz:fediz-spring and org.apache.cxf.fediz:fediz-spring2"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,2.3.0)"
+            ]
+        },
+        "cve": "CVE-2016-8609",
+        "description": "It was found that the keycloak before 2.3.0 did not implement authentication flow correctly. An attacker could use this flaw to construct a phishing URL, from which he could hijack the user's session. This could lead to information disclosure, or permit further possible attacks.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,2.4.0)"
+            ]
+        },
+        "cve": "CVE-2016-8629",
+        "description": "Red Hat Keycloak before version 2.4.0 did not correctly check permissions when handling service account user deletion requests sent to the rest server. An attacker with service account authentication could use this flaw to bypass normal permissions and delete users in a separate realm.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.springframework.security:spring-security-core": [
+                "[,4.1.1)"
+            ],
+            "org.springframework:spring-core": [
+                "[,4.3.1)"
+            ]
+        },
+        "cve": "CVE-2016-5007",
+        "description": "Both Spring Security 3.2.x, 4.0.x, 4.1.0 and the Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x rely on URL pattern mappings for authorization and for mapping requests to controllers respectively. Differences in the strictness of the pattern matching mechanisms, for example with regards to space trimming in path segments, can lead Spring Security to not recognize certain paths as not protected that are in fact mapped to Spring MVC controllers that should be protected. The problem is compounded by the fact that the Spring Framework provides richer features with regards to pattern matching as well as by the fact that pattern matching in each Spring Security and the Spring Framework can easily be customized creating additional differences.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework.security:spring-security-core and org.springframework:spring-core"
+    },
+    {
+        "affects": {
+            "org.apache.pdfbox:pdfbox": [
+                "2.0.0",
+                "[,1.8.12)"
+            ]
+        },
+        "cve": "CVE-2016-2175",
+        "description": "Apache PDFBox before 1.8.12 and 2.x before 2.0.1 does not properly initialize the XML parsers, which allows context-dependent attackers to conduct XML External Entity (XXE) attacks via a crafted PDF.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.pdfbox:pdfbox"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.6.3)"
+            ]
+        },
+        "cve": "CVE-2016-8746",
+        "description": "Apache Ranger before 0.6.3 policy engine incorrectly matches paths in certain conditions when policy does not contain wildcards and has recursion flag set to true.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.6.3)"
+            ]
+        },
+        "cve": "CVE-2016-8751",
+        "description": "Apache Ranger before 0.6.is vulnerable to a Stored Cross-Site Scripting in when entering custom policy conditions. Admin users can store some arbitrary javascript code to be executed when normal users login and access policies.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.6.2)"
+            ]
+        },
+        "cve": "CVE-2016-6815",
+        "description": "In Apache Ranger before 0.6.2, users with \"keyadmin\" role should not be allowed to change password for users with \"admin\" role.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.6.1)"
+            ]
+        },
+        "cve": "CVE-2016-5395",
+        "description": "Cross-site scripting (XSS) vulnerability in the create user functionality in the policy admin tool in Apache Ranger before 0.6.1 allows remote authenticated administrators to inject arbitrary web script or HTML via vectors related to policies.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.5.3)"
+            ]
+        },
+        "cve": "CVE-2016-2174",
+        "description": "SQL injection vulnerability in the policy admin tool in Apache Ranger before 0.5.3 allows remote authenticated administrators to execute arbitrary SQL commands via the eventTime parameter to service/plugins/policies/eventTime.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.5.1)"
+            ]
+        },
+        "cve": "CVE-2016-0733",
+        "description": "The Admin UI in Apache Ranger before 0.5.1 does not properly handle authentication requests that lack a password, which allows remote attackers to bypass authentication by leveraging knowledge of a valid username.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000352",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the ECIES implementation allowed the use of ECB mode. This mode is regarded as unsafe and support for it has been removed from the provider.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000346",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the other party DH public key is not fully validated. This can cause issues as invalid keys can be used to reveal details about the other party's private key where static Diffie-Hellman is in use. As of release 1.56 the key parameters are checked on agreement calculation.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000344",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the DHIES implementation allowed the use of ECB mode. This mode is regarded as unsafe and support for it has been removed from the provider.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000343",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the DSA key pair generator generates a weak private key if used with default values. If the JCA key pair generator is not explicitly initialised with DSA parameters, 1.55 and earlier generates a private value assuming a 1024 bit key size. In earlier releases this can be dealt with by explicitly passing parameters to the key pair generator.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000342",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier ECDSA does not fully validate ASN.1 encoding of signature on verification. It is possible to inject extra elements in the sequence making up the signature and still have it validate, which in some cases may allow the introduction of 'invisible' data into a signed structure.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000341",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier DSA signature generation is vulnerable to timing attack. Where timings can be closely observed for the generation of signatures, the lack of blinding in 1.55, or earlier, may allow an attacker to gain information about the signature's k value and ultimately the private value as well.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[1.51,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[1.51,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000340",
+        "description": "In the Bouncy Castle JCE Provider versions 1.51 to 1.55, a carry propagation bug was introduced in the implementation of squaring for several raw math classes have been fixed (org.bouncycastle.math.raw.Nat???). These classes are used by our custom elliptic curve implementations (org.bouncycastle.math.ec.custom.**), so there was the possibility of rare (in general usage) spurious calculations for elliptic curve scalar multiplications. Such errors would have been detected with high probability by the output validation for our scalar multipliers.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.56)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000339",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the primary engine class used for AES was AESFastEngine. Due to the highly table driven approach used in the algorithm it turns out that if the data channel on the CPU can be monitored the lookup table accesses are sufficient to leak information on the AES key being used. There was also a leak in AESEngine although it was substantially less. AESEngine has been modified to remove any signs of leakage (testing carried out on Intel X86-64) and is now the primary AES class for the BC JCE provider from 1.56. Use of AESFastEngine is now only recommended where otherwise deemed appropriate.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.5.6)"
+            ],
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.56)"
+            ]
+        },
+        "cve": "CVE-2016-1000338",
+        "description": "In Bouncy Castle JCE Provider version 1.55 and earlier the DSA does not fully validate ASN.1 encoding of signature on verification. It is possible to inject extra elements in the sequence making up the signature and still have it validate, which in some cases may allow the introduction of 'invisible' data into a signed structure.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.apache.tika:tika-core": [
+                "[,1.14)"
+            ]
+        },
+        "cve": "CVE-2016-6809",
+        "description": "Apache Tika before 1.14 allows Java code execution for serialized objects embedded in MATLAB files. The issue exists because Tika invokes JMatIO to do native deserialization.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.tika:tika-core"
+    },
+    {
+        "affects": {
+            "org.apache.tika:tika-core": [
+                "[,1.13)"
+            ]
+        },
+        "cve": "CVE-2016-4434",
+        "description": "Apache Tika before 1.13 does not properly initialize the XML parser or choose handlers, which might allow remote attackers to conduct XML External Entity (XXE) attacks via vectors involving (1) spreadsheets in OOXML files and (2) XMP metadata in PDF and other file formats, a related issue to CVE-2016-2175.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tika:tika-core"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-jackson": [
+                "[2.18.0,2.18.2)",
+                "[2.17.0,2.17.5)",
+                "[,2.16.5)"
+            ]
+        },
+        "cve": "CVE-2016-8749",
+        "description": "Apache Camel's Jackson and JacksonXML unmarshalling operation are vulnerable to Remote Code Execution attacks.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-jackson"
+    },
+    {
+        "affects": {
+            "org.apache.ignite:ignite-core": [
+                "[,1.9)"
+            ]
+        },
+        "cve": "CVE-2016-6805",
+        "description": "Apache Ignite before 1.9 allows man-in-the-middle attackers to read arbitrary files via XXE in modified update-notifier documents.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ignite:ignite-core"
+    },
+    {
+        "affects": {
+            "org.apache.qpid:proton-j": [
+                "[,0.12.1)"
+            ]
+        },
+        "cve": "CVE-2016-2166",
+        "description": "The (1) proton.reactor.Connector, (2) proton.reactor.Container, and (3) proton.utils.BlockingConnection classes in Apache Qpid Proton before 0.12.1 improperly use an unencrypted connection for an amqps URI scheme when SSL support is unavailable, which might allow man-in-the-middle attackers to obtain sensitive information or modify data via unspecified vectors.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.qpid:proton-j"
+    },
+    {
+        "affects": {
+            "org.apache.qpid:qpid-broker": [
+                "[,6.0.3)"
+            ]
+        },
+        "cve": "CVE-2016-3094",
+        "description": "PlainSaslServer.java in Apache Qpid Java before 6.0.3, when the broker is configured to allow plaintext passwords, allows remote attackers to cause a denial of service (broker termination) via a crafted authentication attempt, which triggers an uncaught exception.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.qpid:qpid-broker"
+    },
+    {
+        "affects": {
+            "org.apache.qpid:qpid-broker-plugins-amqp-1-0-protocol": [
+                "[,6.0.3)"
+            ],
+            "org.apache.qpid:qpid-broker-plugins-amqp-0-8-protocol": [
+                "[,6.0.3)"
+            ]
+        },
+        "cve": "CVE-2016-4432",
+        "description": "The AMQP 0-8, 0-9, 0-91, and 0-10 connection handling in Apache Qpid Java before 6.0.3 might allow remote attackers to bypass authentication and consequently perform actions via vectors related to connection state logging.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.qpid:qpid-broker-plugins-amqp-0-8-protocol and org.apache.qpid:qpid-broker-plugins-amqp-1-0-protocol"
+    },
+    {
+        "affects": {
+            "org.springframework:spring-core": [
+                "[4.3.0,4.3.5)",
+                "[4.2.0,4.2.9)",
+                "[,3.2.18)"
+            ]
+        },
+        "cve": "CVE-2016-9878",
+        "description": "An issue was discovered in Pivotal Spring Framework before 3.2.18, 4.2.x before 4.2.9, and 4.3.x before 4.3.5. Paths provided to the ResourceServlet were not properly sanitized and as a result exposed to directory traversal attacks.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework:spring-core"
+    },
+    {
+        "affects": {
+            "com.sparkjava:spark-core": [
+                "[,2.5.2)"
+            ]
+        },
+        "cve": "CVE-2016-9177",
+        "description": "Directory traversal vulnerability in Spark 2.5 allows remote attackers to read arbitrary files via a .. (dot dot) in the URI.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.sparkjava:spark-core"
+    }
+]

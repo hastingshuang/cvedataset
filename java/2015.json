@@ -1,0 +1,257 @@
+[
+    {
+        "affects": {
+            "org.apache.activemq:activemq-client": [
+                "[,5.15.5)"
+            ]
+        },
+        "cve": "CVE-2015-7559",
+        "description": "It was found that the Apache ActiveMQ client before 5.15.5 exposed a remote shutdown command in the ActiveMQConnection class. An attacker logged into a compromised broker could use this flaw to achieve denial of service on a connected client.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.activemq:activemq-client"
+    },
+    {
+        "affects": {
+            "org.apache.hive:hive-service": [
+                "1.1.0",
+                "1.0.0"
+            ],
+            "org.apache.hive:hive-exec": [
+                "1.1.0",
+                "1.0.0"
+            ],
+            "org.apache.hive:hive": [
+                "1.1.0",
+                "1.0.0"
+            ]
+        },
+        "cve": "CVE-2015-1772",
+        "description": "The LDAP implementation in HiveServer2 in Apache Hive before 1.0.1 and 1.1.x before 1.1.1, as used in IBM InfoSphere BigInsights 3.0, 3.0.0.1, and 3.0.0.2 and other products, mishandles simple unauthenticated and anonymous bind configurations, which allows remote attackers to bypass authentication via a crafted LDAP request.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hive:hive, org.apache.hive:hive-exec, and org.apache.hive:hive-service"
+    },
+    {
+        "affects": {
+            "org.apache.hive:hive-service": [
+                "[1.0.0,1.2.2)"
+            ],
+            "org.apache.hive:hive-exec": [
+                "[1.0.0,1.2.2)"
+            ],
+            "org.apache.hive:hive": [
+                "[1.0.0,1.2.2)"
+            ]
+        },
+        "cve": "CVE-2015-7521",
+        "description": "The authorization framework in Apache Hive 1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0 and 1.2.1, on clusters protected by Ranger and SqlStdHiveAuthorization, allows attackers to bypass intended parent table access restrictions via unspecified partition-level operations.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.hive:hive, org.apache.hive:hive-exec, and org.apache.hive:hive-service"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[,9.2.9.v20150224)"
+            ]
+        },
+        "cve": "CVE-2015-2080",
+        "description": "The exception handling code in Eclipse Jetty before 9.2.9.v20150224 allows remote attackers to obtain sensitive information from process memory via illegal characters in an HTTP header, aka JetLeak.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "org.apache.hbase:hbase": [
+                "1.1.0",
+                "[1.0.0,1.0.1.1)",
+                "[0.98,0.98.12.1)"
+            ]
+        },
+        "cve": "CVE-2015-1836",
+        "description": "Apache HBase 0.98 before 0.98.12.1, 1.0 before 1.0.1.1, and 1.1 before 1.1.0.1, as used in IBM InfoSphere BigInsights 3.0, 3.0.0.1, and 3.0.0.2 and other products, uses incorrect ACLs for ZooKeeper coordination state, which allows remote attackers to cause a denial of service (daemon outage), obtain sensitive information, or modify data via unspecified client traffic.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.hbase:hbase"
+    },
+    {
+        "affects": {
+            "com.orientechnologies:orientdb-studio": [
+                "2.1.0",
+                "[,2.0.15)"
+            ]
+        },
+        "cve": "CVE-2015-2918",
+        "description": "The Studio component in OrientDB Server Community Edition before 2.0.15 and 2.1.x before 2.1.1 does not properly restrict use of FRAME elements, which makes it easier for remote attackers to conduct clickjacking attacks via a crafted web site.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.orientechnologies:orientdb-studio"
+    },
+    {
+        "affects": {
+            "com.orientechnologies:orientdb-studio": [
+                "2.1.0",
+                "[,2.0.15)"
+            ]
+        },
+        "cve": "CVE-2015-2913",
+        "description": "server/network/protocol/http/OHttpSessionManager.java in the Studio component in OrientDB Server Community Edition before 2.0.15 and 2.1.x before 2.1.1 improperly relies on the java.util.Random class for generation of random Session ID values, which makes it easier for remote attackers to predict a value by determining the internal state of the PRNG in this class.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.orientechnologies:orientdb-studio"
+    },
+    {
+        "affects": {
+            "com.orientechnologies:orientdb-studio": [
+                "2.1.0",
+                "[,2.0.15)"
+            ]
+        },
+        "cve": "CVE-2015-2912",
+        "description": "The JSONP endpoint in the Studio component in OrientDB Server Community Edition before 2.0.15 and 2.1.x before 2.1.1 does not properly restrict callback values, which allows remote attackers to conduct cross-site request forgery (CSRF) attacks, and obtain sensitive information, via a crafted HTTP request.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.orientechnologies:orientdb-studio"
+    },
+    {
+        "affects": {
+            "org.apache.cxf.fediz:fediz-spring2": [
+                "1.2.0",
+                "[,1.1.3)"
+            ]
+        },
+        "cve": "CVE-2015-5175",
+        "description": "Application plugins in Apache CXF Fediz before 1.1.3 and 1.2.x before 1.2.1 allow remote attackers to cause a denial of service.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.cxf.fediz:fediz-spring2"
+    },
+    {
+        "affects": {
+            "org.springframework:spring-core": [
+                "(3.2.0,3.2.15)",
+                "[4.0.0,4.1.8)",
+                "(4.2.0,4.2.2)"
+            ]
+        },
+        "cve": "CVE-2015-5211",
+        "description": "Under some situations, the Spring Framework 4.2.0 to 4.2.1, 4.0.0 to 4.1.7, 3.2.0 to 3.2.14 and older unsupported versions is vulnerable to a Reflected File Download (RFD) attack. The attack involves a malicious user crafting a URL with a batch script extension that results in the response being downloaded rather than rendered and also includes some input reflected in the response.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.springframework:spring-core"
+    },
+    {
+        "affects": {
+            "org.springframework:spring-core": [
+                "[4.0.0,4.1.7)",
+                "[,3.2.14)"
+            ]
+        },
+        "cve": "CVE-2015-3192",
+        "description": "Pivotal Spring Framework before 3.2.14 and 4.x before 4.1.7 do not properly process inline DTD declarations when DTD is not entirely disabled, which allows remote attackers to cause a denial of service (memory consumption and out-of-memory errors) via a crafted XML file.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework:spring-core"
+    },
+    {
+        "affects": {
+            "org.springframework:spring-core": [
+                "[4.1.0,4.1.5)"
+            ]
+        },
+        "cve": "CVE-2015-0201",
+        "description": "The Java SockJS client in Pivotal Spring Framework 4.1.x before 4.1.5 generates predictable session ids, which allows remote attackers to send messages to other sessions via unspecified vectors.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework:spring-core"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.51)"
+            ],
+            "org.bouncycastle:bcprov-jdk15": [
+                "[,1.51)"
+            ]
+        },
+        "cve": "CVE-2015-7940",
+        "description": "The Bouncy Castle Java library before 1.51 does not validate a point is withing the elliptic curve, which makes it easier for remote attackers to obtain private keys via a series of crafted elliptic curve Diffie Hellman (ECDH) key exchanges, aka an \"invalid curve attack.\"",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.bouncycastle:bcprov-jdk14 and org.bouncycastle:bcprov-jdk15"
+    },
+    {
+        "affects": {
+            "org.apache.tika:tika-core": [
+                "[,1.10)"
+            ]
+        },
+        "cve": "CVE-2015-3271",
+        "description": "Apache Tika server (aka tika-server) in Apache Tika 1.9 might allow remote attackers to read arbitrary files via the HTTP fileUrl header.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tika:tika-core"
+    },
+    {
+        "affects": {
+            "org.apache.httpcomponents:httpclient": [
+                "[,4.3.6)"
+            ]
+        },
+        "cve": "CVE-2015-5262",
+        "description": "http/conn/ssl/SSLConnectionSocketFactory.java in Apache HttpComponents HttpClient before 4.3.6 ignores the http.socket.timeout configuration setting during an SSL handshake, which allows remote attackers to cause a denial of service (HTTPS call hang) via unspecified vectors.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.httpcomponents:httpclient"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-servlet": [
+                "2.16.0",
+                "[,2.15.5)"
+            ],
+            "org.apache.camel:camel-jetty": [
+                "2.16.0",
+                "[,2.15.5)"
+            ]
+        },
+        "cve": "CVE-2015-5348",
+        "description": "Apache Camel 2.6.x through 2.14.x, 2.15.x before 2.15.5, and 2.16.x before 2.16.1, when using (1) camel-jetty or (2) camel-servlet as a consumer in Camel routes, allow remote attackers to execute arbitrary commands via a crafted serialized Java object in an HTTP request.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.camel:camel-jetty and org.apache.camel:camel-servlet"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-xstream": [
+                "2.16.0",
+                "[,2.15.5)"
+            ]
+        },
+        "cve": "CVE-2015-5344",
+        "description": "The camel-xstream component in Apache Camel before 2.15.5 and 2.16.x before 2.16.1 allow remote attackers to execute arbitrary commands via a crafted serialized Java object in an HTTP request.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-xstream"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "[2.14.0,2.14.2)",
+                "[,2.13.4)"
+            ]
+        },
+        "cve": "CVE-2015-0264",
+        "description": "Multiple XML external entity (XXE) vulnerabilities in builder/xml/XPathBuilder.java in Apache Camel before 2.13.4 and 2.14.x before 2.14.2 allow remote attackers to read arbitrary files via an external entity in an invalid XML (1) String or (2) GenericFile object in an XPath query.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "[2.14.0,2.14.2)",
+                "[,2.13.4)"
+            ]
+        },
+        "cve": "CVE-2015-0263",
+        "description": "XML external entity (XXE) vulnerability in the XML converter setup in converter/jaxp/XmlConverter.java in Apache Camel before 2.13.4 and 2.14.x before 2.14.2 allows remote attackers to read arbitrary files via an external entity in an SAXSource.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "org.apache.juddi:juddi-client": [
+                "[3.1.2,3.1.5]"
+            ]
+        },
+        "cve": "CVE-2015-5241",
+        "description": "After logging into the portal, the logout jsp page redirects the browser back to the login page after. It is feasible for malicious users to redirect the browser to an unintended web page in Apache jUDDI 3.1.2, 3.1.3, 3.1.4, and 3.1.5 when utilizing the portlets based user interface also known as 'Pluto', 'jUDDI Portal', 'UDDI Portal' or 'uddi-console'. User session data, credentials, and auth tokens are cleared before the redirect.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.juddi:juddi-client"
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {
+        "affects": {
+            "commons-beanutils:commons-beanutils": [
+                "[1.8.0,1.9.2)"
+            ]
+        },
+        "cve": "CVE-2014-0114",
+        "description": "Apache Commons BeanUtils, as distributed in lib/commons-beanutils-1.8.0.jar in Apache Struts 1.x through 1.3.10 and in other products requiring commons-beanutils through 1.9.2, does not suppress the class property, which allows remote attackers to \"manipulate\" the ClassLoader and execute arbitrary code via the class parameter, as demonstrated by the passing of this parameter to the getClass method of the ActionForm object in Struts 1.",
+        "severity": "HIGH",
+        "summary": "Arbitrary code execution in Apache Commons BeanUtils"
+    },
+    {
+        "affects": {
+            "org.jboss.weld:weld-core-bom": [
+                "[,2.2.8)"
+            ]
+        },
+        "cve": "CVE-2014-8122",
+        "description": "Race condition in JBoss Weld before 2.2.8 and 3.x before 3.0.0 Alpha3 allows remote attackers to obtain information from a previous conversation via vectors related to a stale thread state.",
+        "severity": "MODERATE",
+        "summary": "Information disclosure in JBoss Weld"
+    },
+    {
+        "affects": {
+            "commons-fileupload:commons-fileupload": [
+                "[,1.3.1)"
+            ]
+        },
+        "cve": "CVE-2014-0050",
+        "description": "MultipartStream.java in Apache Commons FileUpload before 1.3.1, as used in Apache Tomcat, JBoss Web, and other products, allows remote attackers to cause a denial of service (infinite loop and CPU consumption) via a crafted Content-Type header that bypasses a loop's intended exit conditions.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects commons-fileupload:commons-fileupload"
+    },
+    {
+        "affects": {
+            "org.apache.hive:hive-service": [
+                "[,0.13.1)"
+            ],
+            "     org.apache.hive:hive-exec": [
+                "[,0.13.1)"
+            ],
+            "org.apache.hive:hive": [
+                "[,0.13.1)"
+            ]
+        },
+        "cve": "CVE-2014-0228",
+        "description": "Apache Hive before 0.13.1, when in SQL standards based authorization mode, does not properly check the file permissions for (1) import and (2) export statements, which allows remote authenticated users to obtain sensitive information via a crafted URI.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects      org.apache.hive:hive-exec, org.apache.hive:hive, and org.apache.hive:hive-service"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,1.0.3)"
+            ]
+        },
+        "cve": "CVE-2014-3651",
+        "description": "JBoss KeyCloak before 1.0.3.Final allows remote attackers to cause a denial of service (resource consumption) via a large value in the size parameter to auth/qrcode, related to QR code generation.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.apache.httpcomponents:httpclient": [
+                "[,4.3.5)"
+            ]
+        },
+        "cve": "CVE-2014-3577",
+        "description": "org.apache.http.conn.ssl.AbstractVerifier in Apache HttpComponents HttpClient before 4.3.5 and HttpAsyncClient before 4.0.2 does not properly verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via a \"CN=\" string in a field in the distinguished name (DN) of a certificate, as demonstrated by the \"foo,CN=www.apache.org\" string in the O field.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.httpcomponents:httpclient"
+    },
+    {
+        "affects": {
+            "org.restlet.jse:org.restlet": [
+                "[2.1.0,2.1.7)"
+            ]
+        },
+        "cve": "CVE-2014-1868",
+        "description": "Restlet Framework 2.1.x before 2.1.7 and 2.x.x before 2.2 RC1, when using XMLRepresentation or XML serializers, allows attackers to cause a denial of service via an XML Entity Expansion (XEE) attack.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.restlet.jse:org.restlet"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "[2.12.0,2.12.3)",
+                "[2.11.0,2.11.4)"
+            ]
+        },
+        "cve": "CVE-2014-0003",
+        "description": "The XSLT component in Apache Camel 2.11.x before 2.11.4, 2.12.x before 2.12.3, and possibly earlier versions allows remote attackers to execute arbitrary Java methods via a crafted message.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "[2.12.0,2.12.3)",
+                "[,2.11.4)"
+            ]
+        },
+        "cve": "CVE-2014-0002",
+        "description": "The XSLT component in Apache Camel before 2.11.4 and 2.12.x before 2.12.3 allows remote attackers to read arbitrary files and possibly have other unspecified impact via an XML document containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "org.apache.axis:axis": [
+                "[,1.4]"
+            ]
+        },
+        "cve": "CVE-2014-3596",
+        "description": "The getCN function in Apache Axis 1.4 and earlier does not properly verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via a certificate with a subject that specifies a common name in a field that is not the CN field.  NOTE: this issue exists because of an incomplete fix for CVE-2012-5784.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.axis:axis"
+    }
+]

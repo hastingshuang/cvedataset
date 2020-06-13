@@ -1,0 +1,1620 @@
+[
+    {
+        "affects": {
+            "org.apache.xmlrpc": [
+                "[,3.1.3]"
+            ]
+        },
+        "cve": "CVE-2019-17570",
+        "description": "An untrusted deserialization was found in the org.apache.xmlrpc.parser.XmlRpcResponseParser:addResult method of Apache XML-RPC (aka ws-xmlrpc) library. A malicious XML-RPC server could target a XML-RPC client causing it to execute arbitrary code.\n\nApache XML-RPC is no longer maintained and this issue will not be fixed.",
+        "severity": "HIGH",
+        "summary": "Insecure Deserialization in Apache XML-RPC"
+    },
+    {
+        "affects": {
+            "org.apache.cxf:apache-cxf": [
+                "[3.3.0,3.3.5)",
+                "[,3.2.12)"
+            ]
+        },
+        "cve": "CVE-2019-17573",
+        "description": "By default, Apache CXF creates a /services page containing a listing of the available endpoint names and addresses. This webpage is vulnerable to a reflected Cross-Site Scripting (XSS) attack, which allows a malicious actor to inject javascript into the web page. Please note that the attack exploits a feature which is not typically not present in modern browsers, who remove dot segments before sending the request. However, Mobile applications may be vulnerable.",
+        "severity": "MODERATE",
+        "summary": "Reflected Cross-Site Scripting in Apache CXF"
+    },
+    {
+        "affects": {
+            "org.apache.cxf:apache-cxf": [
+                "[3.3.0,3.3.5)",
+                "[,3.2.12)"
+            ]
+        },
+        "cve": "CVE-2019-12423",
+        "description": "Apache CXF ships with a OpenId Connect JWK Keys service, which allows a client to obtain the public keys in JWK format, which can then be used to verify the signature of tokens issued by the service. Typically, the service obtains the public key from a local keystore (JKS/PKCS12) by specifing the path of the keystore and the alias of the keystore entry. This case is not vulnerable. However it is also possible to obtain the keys from a JWK keystore file, by setting the configuration parameter `rs.security.keystore.type` to `jwk`. For this case all keys are returned in this file &quot;as is&quot;, including all private key and secret key credentials. This is an obvious security risk if the user has configured the signature keystore file with private or secret key credentials. From CXF 3.3.5 and 3.2.12, it is mandatory to specify an alias corresponding to the id of the key in the JWK file, and only this key is returned. In addition, any private key information is omitted by default. `oct` keys, which contain secret keys, are not returned at all.",
+        "severity": "MODERATE",
+        "summary": "Private key leak in Apache CXF"
+    },
+    {
+        "affects": {
+            "org.apache.kafka:kafka": [
+                "2.3.0",
+                "[2.2.0,2.2.1]",
+                "[2.1.0,2.1.1]",
+                "[2.0.0,2.0.1]"
+            ]
+        },
+        "cve": "CVE-2019-12399",
+        "description": "When Connect workers in Apache Kafka 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.2.0, 2.2.1, or 2.3.0 are configured with one or more config providers, and a connector is created/updated on that Connect cluster to use an externalized secret variable in a substring of a connector configuration property value, then any client can issue a request to the same Connect cluster to obtain the connector's task configuration and the response will contain the plaintext secret rather than the externalized secrets variables.",
+        "severity": "MODERATE",
+        "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Apache Kafka"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10)",
+                "[2.8.0,2.8.11.4]",
+                "[,2.6.7.2]"
+            ]
+        },
+        "cve": "CVE-2019-14892",
+        "description": "A flaw was discovered in jackson-databind in versions before 2.9.10, 2.8.11.5 and 2.6.7.3, where it would permit polymorphic deserialization of a malicious object using commons-configuration 1 and 2 JNDI classes. An attacker could use this flaw to execute arbitrary code.",
+        "severity": "HIGH",
+        "summary": "Polymorphic deserialization of malicious object in jackson-databind"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10)"
+            ]
+        },
+        "cve": "CVE-2019-14893",
+        "description": "A flaw was discovered in FasterXML jackson-databind in all versions before 2.9.10 and 2.10.0, where it would permit polymorphic deserialization of malicious objects using the xalan JNDI gadget when used in conjunction with polymorphic type handling methods such as `enableDefaultTyping()` or when @JsonTypeInfo is using `Id.CLASS` or `Id.MINIMAL_CLASS` or in any other way which ObjectMapper.readValue might instantiate objects from unsafe sources. An attacker could use this flaw to execute arbitrary code.",
+        "severity": "HIGH",
+        "summary": "Polymorphic deserialization of malicious object in jackson-databind"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,8.0.0)"
+            ]
+        },
+        "cve": "CVE-2019-14820",
+        "description": "It was found that keycloak before version 8.0.0 exposes internal adapter endpoints in org.keycloak.constants.AdapterConstants, which can be invoked via a specially-crafted URL. This vulnerability could allow an attacker to access unauthorized information.",
+        "severity": "MODERATE",
+        "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Keycloak"
+    },
+    {
+        "affects": {
+            "org.eclipse.milo:sdk-client": [
+                "[,0.3.4]"
+            ]
+        },
+        "cve": "CVE-2019-19135",
+        "description": "### Impact\nCredential replay affecting those connected to a server when *all 3* of the following conditions are met:\n- `SecurityPolicy` is `None`\n- using username/password or X509-based authentication\n- the server has a defect causing it to send null/empty or zeroed nonces \n\n### Patches\nThe problem has been patched in version `0.3.6`. A more relaxed treatment of validation as agreed upon by the OPC UA Security Working Group is implemented in version `0.3.7`.\n\n### Workarounds\nDo not use username/password or X509-based authentication with `SecurityPolicy` of `None`.\n\n### References\nhttps://opcfoundation.org/SecurityBulletins/OPC%20Foundation%20Security%20Bulletin%20CVE-2019-19135.pdf\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue at [https://github.com/eclipse/milo/issues](https://github.com/eclipse/milo/issues)\n* Email [the mailing list](mailto:milo-dev@eclipse.org)",
+        "severity": "MODERATE",
+        "summary": "Insufficient Nonce Validation in Eclipse Milo Client"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat:tomcat": [
+                "[9.0.28,9.0.31)",
+                "[8.5.48,8.5.51)",
+                "[7.0.98,7.0.100)"
+            ],
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[9.0.28,9.0.31)",
+                "[8.5.48,8.5.51)",
+                "[7.0.98,7.0.100)"
+            ]
+        },
+        "cve": "CVE-2019-17569",
+        "description": "The refactoring present in Apache Tomcat 9.0.28 to 9.0.30, 8.5.48 to 8.5.50 and 7.0.98 to 7.0.99 introduced a regression. The result of the regression was that invalid Transfer-Encoding headers were incorrectly processed leading to a possibility of HTTP Request Smuggling if Tomcat was located behind a reverse proxy that incorrectly handled the invalid Transfer-Encoding header in a particular manner. Such a reverse proxy is considered unlikely.",
+        "severity": "LOW",
+        "summary": "Potential HTTP request smuggling in Apache Tomcat"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.10.1]",
+                "[2.8.0,2.8.11.4]",
+                "[2.7.0,2.7.9.6]",
+                "[2.6.0,2.6.7.3]",
+                "[2.5.0,2.5.5]",
+                "[2.4.0,2.4.6.1]",
+                "[2.3.0,2.3.5]",
+                "[2.2.0,2.2.4]",
+                "[2.1.0,2.1.5]",
+                "[2.0.0,2.0.6]"
+            ]
+        },
+        "cve": "CVE-2019-20330",
+        "description": "FasterXML jackson-databind 2.x before 2.9.10.2 lacks certain net.sf.ehcache blocking.",
+        "severity": "HIGH",
+        "summary": "Deserialization of Untrusted Data in jackson-databind"
+    },
+    {
+        "affects": {
+            "io.netty:netty-handler": [
+                "[,4.1.44)"
+            ]
+        },
+        "cve": "CVE-2019-20444",
+        "description": "HttpObjectDecoder.java in Netty before 4.1.44 allows an HTTP header that lacks a colon, which might be interpreted as a separate header with an incorrect syntax, or might be interpreted as an \"invalid fold.\"",
+        "severity": "MODERATE",
+        "summary": "HTTP Request Smuggling in Netty"
+    },
+    {
+        "affects": {
+            "io.netty:netty-handler": [
+                "[,4.1.45)"
+            ]
+        },
+        "cve": "CVE-2019-20445",
+        "description": "HttpObjectDecoder.java in Netty before 4.1.44 allows a Content-Length header to be accompanied by a second Content-Length header, or by a Transfer-Encoding header.",
+        "severity": "MODERATE",
+        "summary": "HTTP Request Smuggling in Netty"
+    },
+    {
+        "affects": {
+            "org.apache.solr:solr-core": [
+                "[8.0.0,8.3.1]",
+                "[7.0.0,7.7.2]",
+                "[6.0.0,6.6.6]",
+                "[5.0.0,5.5.5]"
+            ]
+        },
+        "cve": "CVE-2019-17558",
+        "description": "Apache Solr 5.0.0 to Apache Solr 8.3.1 are vulnerable to a Remote Code Execution through the VelocityResponseWriter. A Velocity template can be provided through Velocity templates in a configset `velocity/` directory or as a parameter. A user defined configset could contain renderable, potentially malicious, templates. Parameter provided templates are disabled by default, but can be enabled by setting `params.resource.loader.enabled` by defining a response writer with that setting set to `true`. Defining a response writer requires configuration API access. Solr 8.4 removed the params resource loader entirely, and only enables the configset-provided template rendering when the configset is `trusted` (has been uploaded by an authenticated user).",
+        "severity": "MODERATE",
+        "summary": "Improper Input Validation in Apache Solr"
+    },
+    {
+        "affects": {
+            "io.ktor:ktor-client-core": [
+                "[,1.2.6]"
+            ]
+        },
+        "cve": "CVE-2019-19703",
+        "description": "In Ktor through 1.2.6, the client resends data from the HTTP Authorization header to a redirect location.",
+        "severity": "MODERATE",
+        "summary": "URL Redirection to Untrusted Site (Open Redirect) in Ktor"
+    },
+    {
+        "affects": {
+            "org.apache.olingo:odata-client-proxy": [
+                "[4.0.0,4.6.0]"
+            ]
+        },
+        "cve": "CVE-2019-17556",
+        "description": "Apache Olingo versions 4.0.0 to 4.6.0 provide the AbstractService class, which is public API, uses ObjectInputStream and doesn't check classes being deserialized. If an attacker can feed malicious metadata to the class, then it may result in running attacker's code in the worse case.",
+        "severity": "HIGH",
+        "summary": "Deserialization of Untrusted Data in Apache Olingo"
+    },
+    {
+        "affects": {
+            "org.apache.olingo:odata-server-core": [
+                "[4.0.0,4.6.0]"
+            ],
+            "org.apache.olingo:odata-client-core": [
+                "[4.0.0,4.6.0]"
+            ]
+        },
+        "cve": "CVE-2019-17554",
+        "description": "The XML content type entity deserializer in Apache Olingo versions 4.0.0 to 4.6.0 is not configured to deny the resolution of external entities. Request with content type \"application/xml\", which trigger the deserialization of entities, can be used to trigger XXE attacks.",
+        "severity": "MODERATE",
+        "summary": "Improper Restriction of XML External Entity Reference in Apache Olingo"
+    },
+    {
+        "affects": {
+            "org.apache.olingo:odata-client-core": [
+                "[4.0.0,4.6.0]"
+            ]
+        },
+        "cve": "CVE-2019-17555",
+        "description": "The AsyncResponseWrapperImpl class in Apache Olingo versions 4.0.0 to 4.6.0 reads the Retry-After header and passes it to the Thread.sleep() method without any check. If a malicious server returns a huge value in the header, then it can help to implement a DoS attack.",
+        "severity": "MODERATE",
+        "summary": "Improper input validation in Apache Olingo"
+    },
+    {
+        "affects": {
+            "org.apache.shiro:shiro-core": [
+                "[,1.4.2)"
+            ]
+        },
+        "cve": "CVE-2019-12422",
+        "description": "Apache Shiro before 1.4.2, when using the default \"remember me\" configuration, cookies could be susceptible to a padding attack.",
+        "severity": "MODERATE",
+        "summary": "Improper input validation in Apache Shiro"
+    },
+    {
+        "affects": {
+            "org.codehaus.jackson:jackson-mapper-asl": [
+                "[,1.9.13]"
+            ]
+        },
+        "cve": "CVE-2019-10172",
+        "description": "A flaw was found in org.codehaus.jackson:jackson-mapper-asl:1.9.x libraries. XML external entity vulnerabilities similar to CVE-2016-3720 also affects codehaus jackson-mapper-asl libraries but in different classes.",
+        "severity": "MODERATE",
+        "summary": "Improper Restriction of XML External Entity Reference in jackson-mapper-asl"
+    },
+    {
+        "affects": {
+            "com.puppycrawl.tools:checkstyle": [
+                "[,8.29)"
+            ]
+        },
+        "cve": "CVE-2019-10782",
+        "description": "Due to an incomplete fix for [CVE-2019-9658](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9658), checkstyle was still vulnerable to XML External Entity (XXE) Processing.\n\n### Impact\n\n#### User: Build Maintainers\n\nThis vulnerability probably doesn't impact Maven/Gradle users as, in most cases, these builds are processing files that are trusted, or pre-vetted by a pull request reviewer before being run on internal CI infrastructure.\n\n#### User: Static Analysis as a Service\n\nIf you operate a site/service that parses \"untrusted\" Checkstyle XML configuration files, you are vulnerable to this and should patch.\n\nNote from the discoverer of the original CVE-2019-9658:\n\n> While looking at a few companies that run Checkstyle/PMD/ect... as a service I notice that it's a common pattern to run the static code analysis tool inside of a Docker container with the following flags:\n> ```\n> --net=none \\\n> --privileged=false \\\n> --cap-drop=ALL\n> ```\n> Running the analysis in Docker has the advantage that there should be no sensitive local file information that XXE can exfiltrate from the container. Additionally, these flags prevent vulnerabilities in static analysis tools like Checkstyle from being used to exfiltrate data via XXE or to perform SSRF.\n> \\- [Jonathan Leitschuh](https://twitter.com/jlleitschuh)\n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\nPatched, will be released with version 8.29 at 26 Jan 2020.\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nNo workaround are available\n\n### References\n\n - [CWE-611: Improper Restriction of XML External Entity Reference](https://cwe.mitre.org/data/definitions/611.html)\n - GitHub Issue https://github.com/checkstyle/checkstyle/issues/7468\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n* Open an issue in https://github.com/checkstyle/checkstyle/issues",
+        "severity": "MODERATE",
+        "summary": "XML external entity (XXE) processing ('external-parameter-entities' feature was not fully disabled))"
+    },
+    {
+        "affects": {
+            "org.apache.solr:solr-core": [
+                "[8.1.1,8.2.0]"
+            ]
+        },
+        "cve": "CVE-2019-12409",
+        "description": "The 8.1.1 and 8.2.0 releases of Apache Solr contain an insecure setting for the ENABLE_REMOTE_JMX_OPTS configuration option in the default solr.in.sh configuration file shipping with Solr. If you use the default solr.in.sh file from the affected releases, then JMX monitoring will be enabled and exposed on RMI_PORT (default=18983), without any authentication. If this port is opened for inbound traffic in your firewall, then anyone with network access to your Solr nodes will be able to access JMX, which may in turn allow them to upload malicious code for execution on the Solr server.",
+        "severity": "HIGH",
+        "summary": "Unrestricted upload of file with dangerous type in Apache Solr"
+    },
+    {
+        "affects": {
+            "io.ratpack:ratpack-core": [
+                "[,1.7.6)"
+            ]
+        },
+        "cve": "CVE-2019-10770",
+        "description": "Versions of Ratpack from 0.9.10 through 1.7.5 are vulnerable to CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') (aka. XSS) in the development error handler. An attacker can utilize this to perform XSS when an exception message contains untrusted data.\n\nAs a simplistic example:\n\nThis vulnerability has been patched in Ratpack version 1.7.6.",
+        "severity": "MODERATE",
+        "summary": "Default development error handler in Ratpack is vulnerable to HTML content injection (XSS)"
+    },
+    {
+        "affects": {
+            "org.infinispan:infinispan-core": [
+                "[,10.0.0)"
+            ]
+        },
+        "cve": "CVE-2019-10158",
+        "description": "A flaw was found in Infinispan through version 9.4.14.Final. An improper implementation of the session fixation protection in the Spring Session integration can result in incorrect session handling.",
+        "severity": "HIGH",
+        "summary": "Improper implementation of the session fixation protection in Infinispan"
+    },
+    {
+        "affects": {
+            "org.hibernate.validator:hibernate-validator": [
+                "[,6.0.18)"
+            ]
+        },
+        "cve": "CVE-2019-10219",
+        "description": "A vulnerability was found in Hibernate-Validator. The SafeHtml validator annotation fails to properly sanitize payloads consisting of potentially malicious code in HTML comments and instructions. This vulnerability can result in an XSS attack.",
+        "severity": "MODERATE",
+        "summary": "The SafeHtml annotation in Hibernate-Validator does not properly guard against XSS attacks"
+    },
+    {
+        "affects": {
+            "org.apache.atlas:apache-atlas": [
+                "[1.0.0,1.2.0)",
+                "[,0.8.4)"
+            ]
+        },
+        "cve": "CVE-2019-10070",
+        "description": "Apache Atlas versions 0.8.3 and 1.1.0 were found vulnerable to Stored Cross-Site Scripting in the search functionality",
+        "severity": "MODERATE",
+        "summary": "Stored XSS in Apache Atlas"
+    },
+    {
+        "affects": {
+            "log4j:log4j": [
+                "[1.2,1.2.27]"
+            ]
+        },
+        "cve": "CVE-2019-17571",
+        "description": "Included in Log4j 1.2 is a SocketServer class that is vulnerable to deserialization of untrusted data which can be exploited to remotely execute arbitrary code when combined with a deserialization gadget when listening to untrusted network traffic for log data. This affects Log4j versions up to 1.2 up to 1.2.17.",
+        "severity": "MODERATE",
+        "summary": "Deserialization of Untrusted Data in Log4j"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[9.0.0,9.0.29)",
+                "[8.0.0,8.5.48)",
+                "[,7.0.98)"
+            ]
+        },
+        "cve": "CVE-2019-12418",
+        "description": "When Apache Tomcat 9.0.0.M1 to 9.0.28, 8.5.0 to 8.5.47, 7.0.0 and 7.0.97 is configured with the JMX Remote Lifecycle Listener, a local attacker without access to the Tomcat process or configuration files is able to manipulate the RMI registry to perform a man-in-the-middle attack to capture user names and passwords used to access the JMX interface. The attacker can then use these credentials to access the JMX interface and gain complete control over the Tomcat instance.",
+        "severity": "MODERATE",
+        "summary": "In Apache Tomcat, a local attacker may be able to perform a man-in-the-middle attack to capture user names and passwords"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[9.0.0,9.0.30)",
+                "[8.0.0,8.5.50)",
+                "[,7.0.99)"
+            ]
+        },
+        "cve": "CVE-2019-17563",
+        "description": "When using FORM authentication with Apache Tomcat 9.0.0.M1 to 9.0.29, 8.5.0 to 8.5.49 and 7.0.0 to 7.0.98 there was a narrow window where an attacker could perform a session fixation attack. The window was considered too narrow for an exploit to be practical but, erring on the side of caution, this issue has been treated as a security vulnerability.",
+        "severity": "HIGH",
+        "summary": "In Apache Tomcat, when using FORM authentication there was a narrow window where an attacker could perform a session fixation attack"
+    },
+    {
+        "affects": {
+            "com.linecorp.armeria:armeria": [
+                "[0.85.0,0.97.0)",
+                "[,0.97.0)"
+            ]
+        },
+        "cve": "CVE-2019-16771",
+        "description": "## Multiple timing attack vulnerabilities leading to the recovery of secrets based on the use of non-constant time compare function\r\n\r\n### Impact\r\n\r\nString comparison method in multiple authentication validation in Armeria were known to be vulnerable to timing attacks. This vulnerability is caused by the insecure implementation of `equals` method from `java.lang.String`. While this attack is not practically possible, an attacker still has a potential to attack if the victim's server validates user by using `equals` method.\r\n\r\nWe would like to thank @chrsow for pointing out the issue.\r\n\r\n## Potentially vulnerable codes\r\n\r\nhttps://github.com/line/armeria/blob/f0d870fde1088114070be31b67f7df0a21e835c6/core/src/main/java/com/linecorp/armeria/server/auth/OAuth2Token.java#L54\r\nhttps://github.com/line/armeria/blob/f0d870fde1088114070be31b67f7df0a21e835c6/core/src/main/java/com/linecorp/armeria/server/auth/BasicToken.java#L64\r\n\r\n### Patches\r\n\r\nThere are two options to patch this issue.\r\n\r\n1. Remove `equals` method; it has been exclusively used for test cases and was never used in any OSS projects that are using Armeria. (But it is worth noting that there are possibilities of closed projects authenticating users by utilizing `equals` method)\r\n\r\n2. Use `MessageDigest.isEqual` to compare the credential instead.\r\n\r\n### Workarounds\r\n\r\n1. Update to the latest version (TBD)\r\n\r\n2-1. Users can prevent these vulnerabilities by modifying and implementing timing attack preventions by themselves.\r\n\r\n2-2. Precisely speaking, it is possible to compare credentials by securely comparing them after calling methods to directly return the input (namely `Object. accessToken()`, `Object.username()` and `Object.password()`).\r\n\r\n### References\r\n- https://cwe.mitre.org/data/definitions/208.html\r\n- https://security.stackexchange.com/questions/111040/should-i-worry-about-remote-timing-attacks-on-string-comparison\r\n\r\n### Side Note\r\n\r\nSince it is a theoretical attack, there is no PoC available from neither the vendor nor the security team.\r\n\r\n",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects com.linecorp.armeria:armeria"
+    },
+    {
+        "affects": {
+            "org.apache.nifi:nifi": [
+                "[1.3.0,1.10.0)"
+            ]
+        },
+        "cve": "CVE-2019-12421",
+        "description": "When using an authentication mechanism other than PKI, when the user clicks Log Out in NiFi versions 1.0.0 to 1.9.2, NiFi invalidates the authentication token on the client side but not on the server side. This permits the user's client-side token to be used for up to 12 hours after logging out to make API requests to NiFi.",
+        "severity": "MODERATE",
+        "summary": "Apache NiFi user log out issue"
+    },
+    {
+        "affects": {
+            "org.apache.nifi:nifi": [
+                "[1.3.0,1.10.0)"
+            ],
+            "org.apache.nifi:nifi-web-api": [
+                "[1.3.0,1.10.0)"
+            ]
+        },
+        "cve": "CVE-2019-10083",
+        "description": "When updating a Process Group via the API in NiFi versions 1.3.0 to 1.9.2, the response to the request includes all of its contents (at the top most level, not recursively). The response included details about processors and controller services which the user may not have had read access to.",
+        "severity": "MODERATE",
+        "summary": "Apache NiFi process group information disclosure"
+    },
+    {
+        "affects": {
+            "org.apache.nifi:org.apache.nifi:nifi": [
+                "[1.3.0,1.10.0)"
+            ],
+            "org.apache.nifi:org.apache.nifi:nifi-security": [
+                "[1.3.0,1.10.0)"
+            ]
+        },
+        "cve": "CVE-2019-10080",
+        "description": "The XMLFileLookupService in NiFi versions 1.3.0 to 1.9.2 allowed trusted users to inadvertently configure a potentially malicious XML file. The XML file has the ability to make external calls to services (via XXE) and reveal information such as the versions of Java, Jersey, and Apache that the NiFI instance uses.",
+        "severity": "MODERATE",
+        "summary": "Apache NiFi information disclosure by XXE"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "9.4.23.v20191118",
+                "9.4.22.v20191022",
+                "9.4.21.v20190926"
+            ]
+        },
+        "cve": "CVE-2019-17632",
+        "description": "In Eclipse Jetty versions 9.4.21.v20190926, 9.4.22.v20191022, and 9.4.23.v20191118, the generation of default unhandled Error response content (in text/html and text/json Content-Type) does not escape Exception messages in stacktraces included in error output.",
+        "severity": "MODERATE",
+        "summary": "Unescaped exception messages in error responses in Jetty"
+    },
+    {
+        "affects": {
+            "io.undertow:undertow-core": [
+                "[,2.0.20)"
+            ]
+        },
+        "cve": "CVE-2019-10212",
+        "description": "A flaw was found in, all under 2.0.20, in the Undertow DEBUG log for io.undertow.request.security. If enabled, an attacker could abuse this flaw to obtain the user's credentials from the log files.",
+        "severity": "HIGH",
+        "summary": "Potential to access user credentials from the log files when debug logging enabled"
+    },
+    {
+        "affects": {
+            "org.apache.tapestry:tapestry-core": [
+                "[5.4.0,5.4.5)"
+            ]
+        },
+        "cve": "CVE-2019-0207",
+        "description": "Tapestry processes assets `/assets/ctx` using classes chain `StaticFilesFilter -> AssetDispatcher -> ContextResource`, which doesn't filter the character `\\`, so attacker can perform a path traversal attack to read any files on Windows platform.",
+        "severity": "MODERATE",
+        "summary": "Path traversal attack on Windows platforms"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.10.1)"
+            ]
+        },
+        "cve": "CVE-2019-17531",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.0.0 through 2.9.10. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has the apache-log4j-extra (version 1.2.x) jar in the classpath, and an attacker can provide a JNDI service to access, it is possible to make the service execute a malicious payload.",
+        "severity": "CRITICAL",
+        "summary": "Malicious payload execution possible due to polymorphic typing issue"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.10.1)"
+            ]
+        },
+        "cve": "CVE-2019-16943",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.0.0 through 2.9.10. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has the p6spy (3.8.6) jar in the classpath, and an attacker can find an RMI service endpoint to access, it is possible to make the service execute a malicious payload. This issue exists because of com.p6spy.engine.spy.P6DataSource mishandling.",
+        "severity": "MODERATE",
+        "summary": "Malicious payload execution possible due to polymorphic typing issue"
+    },
+    {
+        "affects": {
+            "org.opencms:opencms-core": [
+                "[,11.0.1)"
+            ]
+        },
+        "cve": "CVE-2019-13234",
+        "description": "In the Alkacon OpenCms Apollo Template 10.5.4 and 10.5.5, there is XSS in the search engine.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.opencms:opencms-core"
+    },
+    {
+        "affects": {
+            "org.opencms:opencms-core": [
+                "[,11.0.1)"
+            ]
+        },
+        "cve": "CVE-2019-13237",
+        "description": "In Alkacon OpenCms 10.5.4 and 10.5.5, there are multiple resources vulnerable to Local File Inclusion that allow an attacker to access server resources: clearhistory.jsp, convertxml.jsp, group_new.jsp, loginmessage.jsp, xmlcontentrepair.jsp, and /system/workplace/admin/history/settings/index.jsp.",
+        "severity": "MODERATE",
+        "summary": "Multiple resources vulnerable to Local File Inclusion that allow an attacker to access server resources"
+    },
+    {
+        "affects": {
+            "org.opencms:opencms-core": [
+                "[,11.0.1)"
+            ]
+        },
+        "cve": "CVE-2019-13235",
+        "description": "In the Alkacon OpenCms Apollo Template 10.5.4 and 10.5.5, there is XSS in the Login form.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.opencms:opencms-core"
+    },
+    {
+        "affects": {
+            "org.opencms:opencms-core": [
+                "[,11.0.1)"
+            ]
+        },
+        "cve": "CVE-2019-13236",
+        "description": "In system/workplace/ in Alkacon OpenCms 10.5.4 and 10.5.5, there are multiple Reflected and Stored XSS issues in the management interface.",
+        "severity": "MODERATE",
+        "summary": "Multiple Reflected and Stored XSS issues in the management interface"
+    },
+    {
+        "affects": {
+            "org.apache.cxf:cxf": [
+                "[3.3.0,3.3.4)",
+                "[,3.2.11)"
+            ]
+        },
+        "cve": "CVE-2019-12419",
+        "description": "Apache CXF before 3.3.4 and 3.2.11 provides all of the components that are required to build a fully fledged OpenId Connect service. There is a vulnerability in the access token services, where it does not validate that the authenticated principal is equal to that of the supplied clientId parameter in the request. If a malicious client was able to somehow steal an authorization code issued to another client, then they could exploit this vulnerability to obtain an access token for the other client.",
+        "severity": "HIGH",
+        "summary": "Potential session hijack in Apache CXF "
+    },
+    {
+        "affects": {
+            "org.apache.cxf:cxf": [
+                "[3.3.0,3.3.4)",
+                "[,3.2.11)"
+            ]
+        },
+        "cve": "CVE-2019-12406",
+        "description": "Apache CXF before 3.3.4 and 3.2.11 does not restrict the number of message attachments present in a given message. This leaves open the possibility of a denial of service type attack, where a malicious user crafts a message containing a very large number of message attachments. From the 3.3.4 and 3.2.11 releases, a default limit of 50 message attachments is enforced. This is configurable via the message property \"attachment-max-count\".",
+        "severity": "MODERATE",
+        "summary": "Potential DOS attack due to unrestricted attachment count in messages"
+    },
+    {
+        "affects": {
+            "org.pac4j:pac4j-saml": [
+                "[,3.8.2)"
+            ]
+        },
+        "cve": "CVE-2019-10755",
+        "description": "The SAML identifier generated within SAML2Utils.java was found to make use of the apache commons-lang3 RandomStringUtils class which makes them predictable due to RandomStringUtils PRNG's algorithm not being cryptographically strong. This issue only affects the 3.X release of pac4j-saml.",
+        "severity": "LOW",
+        "summary": "Generated SAML identifier predictable due to algorithm used not being cryptographically strong"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.10.1)"
+            ]
+        },
+        "cve": "CVE-2019-16942",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.0.0 through 2.9.10. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has the commons-dbcp (1.4) jar in the classpath, and an attacker can find an RMI service endpoint to access, it is possible to make the service execute a malicious payload. This issue exists because of org.apache.commons.dbcp.datasources.SharedPoolDataSource and org.apache.commons.dbcp.datasources.PerUserPoolDataSource mishandling.",
+        "severity": "MODERATE",
+        "summary": "Malicious payload execution possible due to polymorphic typing issue"
+    },
+    {
+        "affects": {
+            "io.projectreactor.netty:reactor-netty": [
+                "[,0.8.11)"
+            ]
+        },
+        "cve": "CVE-2019-11284",
+        "description": "Pivotal Reactor Netty, versions prior to 0.8.11, passes headers through redirects, including authorization ones. A remote unauthenticated malicious user may gain access to credentials for a different server than they have access to.",
+        "severity": "MODERATE",
+        "summary": "Authorization headers passed through redirects"
+    },
+    {
+        "affects": {
+            "io.ratpack:ratpack-core": [
+                "[,1.7.5)"
+            ]
+        },
+        "cve": "CVE-2019-17513",
+        "description": "## CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')\n\nVersions of Ratpack 0.9.1 through and including 1.7.4 are vulnerable to [HTTP Response Splitting](https://www.owasp.org/index.php/HTTP_Response_Splitting), \r\nif untrusted and unsanitized data is used to populate the headers of an HTTP response.\r\nAn attacker can utilize this vulnerability to have the server issue any HTTP response they specify.\r\n\r\nIf your application uses arbitrary user input as the value of a response header it is vulnerable.\r\nIf your application does not use arbitrary values as response header values, it is not vulnerable.\r\n\r\nPreviously, Ratpack did not validate response header values.\r\nNow, adding a header value that contains the header value termination characters (CRLF) produces a runtime exception.\r\nSince there is no mechanism for escaping or encoding the termination characters in a String, a runtime exception is necessary.\r\n\r\nAs potentially dangerous values now cause runtime exceptions, it is a good idea to continue to validate and sanitize any user-supplied values being used as response headers.\r\n\r\nWe would like to thank [Jonathan Leitschuh](https://github.com/JLLeitschuh) for reporting this vulnerability.\r\n\r\n### Vulnerable Example\r\n\r\nThe following example server uses a query parameter value as a response header, without validating or sanitizing it.\r\n```java\r\nRatpackServer startedServer =  RatpackServer.start(server -> {\r\n    server.handlers(chain -> chain.all(ctx -> {\r\n        // User supplied query parameter\r\n        String header = ctx.getRequest().getQueryParams().get(\"header\");\r\n        // User supplied data used to populate a header value.\r\n        ctx.header(\"the-header\", header)\r\n            .render(\"OK!\");\r\n    }));\r\n});\r\n```\r\n\r\nSending a request to the server with the following value for the `header` query param would allow the execution of arbitrary Javascript.\r\n\r\n```\r\nContent-Type: text/html\r\nX-XSS-Protection: 0\r\n\r\n<script>alert(document.domain)</script>\r\n```\r\n\r\n### Impact\r\n\r\n- Cross-User Defacement\r\n- Cache Poisoning\r\n- Cross-Site Scripting\r\n- Page Hijacking\r\n\r\n### Patches\r\n\r\nThis vulnerability has been patched in Ratpack version 1.7.5.\r\n\r\n### Root Cause\r\n\r\nThe root cause was due to using the netty `DefaultHttpHeaders` object with verification disabled.\r\n\r\nhttps://github.com/ratpack/ratpack/blob/af1e8c8590f164d7dd84d4212886fad4ead99080/ratpack-core/src/main/java/ratpack/server/internal/NettyHandlerAdapter.java#L159\r\n\r\nThis vulnerability is now more clearly documented in the Netty documentation: https://github.com/netty/netty/pull/9646\r\n\r\n### Workarounds\r\n\r\nThe workaround for this vulnerability is to either not use arbitrary input as response header values or validate such values before being used to ensure they don't contain a carriage return and/or line feed characters.\r\n\r\n### References\r\n\r\n - [CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')](https://cwe.mitre.org/data/definitions/113.html)\r\n - Fix commit: https://github.com/ratpack/ratpack/commit/efb910d38a96494256f36675ef0e5061097dd77d\r\n \r\n### For more information\r\n\r\nIf you have any questions or comments about this advisory:\r\n* Open an issue in [ratpack/ratpack](https://github.com/ratpack/ratpack/issues)\r\n* Ask in our [Slack channel](https://slack-signup.ratpack.io/)\r\n\n",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.ratpack:ratpack-core"
+    },
+    {
+        "affects": {
+            "org.bouncycastle:bcprov-jdk14": [
+                "[,1.64)"
+            ]
+        },
+        "cve": "CVE-2019-17359",
+        "description": "The ASN.1 parser in Bouncy Castle Crypto (aka BC Java) 1.63 can trigger a large attempted memory allocation, and resultant OutOfMemoryError error, via crafted ASN.1 data. This is fixed in 1.64.",
+        "severity": "MODERATE",
+        "summary": "Out-of-Memory Error in Bouncy Castle Crypto"
+    },
+    {
+        "affects": {
+            "com.nimbusds:nimbus-jose-jwt": [
+                "[,7.9)"
+            ]
+        },
+        "cve": "CVE-2019-17195",
+        "description": "Connect2id Nimbus JOSE+JWT before v7.9 can throw various uncaught exceptions while parsing a JWT, which could result in an application crash (potential information disclosure) or a potential authentication bypass.",
+        "severity": "MODERATE",
+        "summary": "Crash or authentication bypass possible due to uncaught exceptions while parsing a JWT"
+    },
+    {
+        "affects": {
+            "io.netty:netty-all": [
+                "[,4.1.42)"
+            ]
+        },
+        "cve": "CVE-2019-16869",
+        "description": "Netty before 4.1.42.Final mishandles whitespace before the colon in HTTP headers (such as a \"Transfer-Encoding : chunked\" line), which leads to HTTP request smuggling.",
+        "severity": "MODERATE",
+        "summary": "HTTP request smuggling possible due to mishandling of whitespace in headers"
+    },
+    {
+        "affects": {
+            "org.apache.commons:commons-compress": [
+                "[1.15,1.19)"
+            ]
+        },
+        "cve": "CVE-2019-12402",
+        "description": "The file name encoding algorithm used internally in Apache Commons Compress 1.15 to 1.18 can get into an infinite loop when faced with specially crafted inputs. This can lead to a denial of service attack if an attacker can choose the file names inside of an archive created by Compress.",
+        "severity": "HIGH",
+        "summary": "Denial of service possible due to infinite loop in file name encoding algorithm"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M5)"
+            ]
+        },
+        "cve": "CVE-2019-12404",
+        "description": "On Apache JSPWiki, up to version 2.11.0.M4, a carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki, related to InfoContent.jsp, which could allow the attacker to execute javascript in the victim's browser and get some sensitive information about the victim.",
+        "severity": "MODERATE",
+        "summary": "XSS vulnerability possible via a carefully crafted plugin link invocation"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M5)"
+            ]
+        },
+        "cve": "CVE-2019-10089",
+        "description": "On Apache JSPWiki, up to version 2.11.0.M4, a carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki, related to the WYSIWYG editor, which could allow the attacker to execute javascript in the victim's browser and get some sensitive information about the victim.",
+        "severity": "MODERATE",
+        "summary": "XSS vulnerability possible via a carefully crafted plugin link invocation"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M5)"
+            ]
+        },
+        "cve": "CVE-2019-10087",
+        "description": "On Apache JSPWiki, up to version 2.11.0.M4, a carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki, related to the Page Revision History, which could allow the attacker to execute javascript in the victim's browser and get some sensitive information about the victim.",
+        "severity": "MODERATE",
+        "summary": "XSS vulnerability possible via a carefully crafted plugin link invocation"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M5)"
+            ]
+        },
+        "cve": "CVE-2019-10090",
+        "description": "On Apache JSPWiki, up to version 2.11.0.M4, a carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki, related to the plain editor, which could allow the attacker to execute javascript in the victim's browser and get some sensitive information about the victim.",
+        "severity": "MODERATE",
+        "summary": "XSS vulnerability possible via a carefully crafted plugin link invocation"
+    },
+    {
+        "affects": {
+            "org.apache.tapestry:tapestry-core": [
+                "(5.4.0,5.4.5)"
+            ]
+        },
+        "cve": "CVE-2019-10071",
+        "description": "The code which checks HMAC in form submissions used String.equals() for comparisons, which results in a timing side channel for the comparison of the HMAC signatures. This could lead to remote code execution if an attacker is able to determine the correct signature for their payload. The comparison should be done with a constant time algorithm instead.",
+        "severity": "MODERATE",
+        "summary": "Timing attack on HMAC signature comparison in Apache Tapestry"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,6.0.1]"
+            ]
+        },
+        "cve": "CVE-2019-10201",
+        "description": "It was found that Keycloak's SAML broker, versions up to 6.0.1, did not verify missing message signatures. If an attacker modifies the SAML Response and removes the <Signature> sections, the message is still accepted, and the message can be modified. An attacker could use this flaw to impersonate other users and gain access to sensitive information.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,6.0.1]"
+            ]
+        },
+        "cve": "CVE-2019-10199",
+        "description": "It was found that Keycloak's account console, up to 6.0.1, did not perform adequate header checks in some requests. An attacker could use this flaw to trick an authenticated user into performing operations via request from an untrusted domain.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.sakaiproject:chat-base": [
+                "[,12.6]"
+            ]
+        },
+        "cve": "CVE-2019-16148",
+        "description": "Sakai through 12.6 allows XSS via a chat user name.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.sakaiproject:chat-base"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.10)"
+            ]
+        },
+        "cve": "CVE-2019-14540",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind before 2.9.10. It is related to com.zaxxer.hikari.HikariConfig.",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.10)"
+            ]
+        },
+        "cve": "CVE-2019-16335",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind before 2.9.10. It is related to com.zaxxer.hikari.HikariDataSource. This is a different vulnerability than CVE-2019-14540.",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "org.eclipse.paho:org.eclipse.paho.client.mqttv3": [
+                "[,1.2.1)"
+            ]
+        },
+        "cve": "CVE-2019-11777",
+        "description": "In the Eclipse Paho Java client library version 1.2.0, when connecting to an MQTT server using TLS and setting a host name verifier, the result of that verification is not checked. This could allow one MQTT server to impersonate another and provide the client library with incorrect information.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.eclipse.paho:org.eclipse.paho.client.mqttv3"
+    },
+    {
+        "affects": {
+            "com.diffplug.spotless:spotless-eclipse-groovy": [
+                "[,3.0.1)"
+            ],
+            "com.diffplug.spotless:spotless-eclipse-cdt": [
+                "[,9.4.4)"
+            ],
+            "com.diffplug.spotless:spotless-eclipse-wtp": [
+                "[,3.9.6)"
+            ]
+        },
+        "cve": "CVE-2019-10753",
+        "description": "In all versions prior to version 3.9.6 for eclipse-wtp, all versions prior to version 9.4.4 for eclipse-cdt, and all versions prior to version 3.0.1 for eclipse-groovy, Spotless was resolving dependencies over an insecure channel (http). If the build occurred over an insecure connection, a malicious user could have perform a Man-in-the-Middle attack during the build and alter the build artifacts that were produced. In case that any of these artifacts were compromised, any developers using these could be altered. **Note:** In order to validate that this artifact was not compromised, the maintainer would need to confirm that none of the artifacts published to the registry were not altered with. Until this happens, we can not guarantee that this artifact was not compromised even though the probability that this happened is low.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.diffplug.spotless:spotless-eclipse-cdt, com.diffplug.spotless:spotless-eclipse-groovy, and com.diffplug.spotless:spotless-eclipse-wtp"
+    },
+    {
+        "affects": {
+            "org.sonatype.nexus.plugins:nexus-yum-repository-plugin": [
+                "[,2.14.14)"
+            ]
+        },
+        "cve": "CVE-2019-5475",
+        "description": "The Nexus Yum Repository Plugin in v2 is vulnerable to Remote Code Execution when instances using CommandLineExecutor.java are supplied vulnerable data, such as the Yum Configuration Capability.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.sonatype.nexus.plugins:nexus-yum-repository-plugin"
+    },
+    {
+        "affects": {
+            "org.apache.santuario:xmlsec": [
+                "[2.0.3,2.1.4)"
+            ]
+        },
+        "cve": "CVE-2019-12400",
+        "description": "In version 2.0.3 Apache Santuario XML Security for Java, a caching mechanism was introduced to speed up creating new XML documents using a static pool of DocumentBuilders. However, if some untrusted code can register a malicious implementation with the thread context class loader first, then this implementation might be cached and re-used by Apache Santuario - XML Security for Java, leading to potential security flaws when validating signed documents, etc. The vulnerability affects Apache Santuario - XML Security for Java 2.0.x releases from 2.0.3 and all 2.1.x releases before 2.1.4.",
+        "severity": "LOW",
+        "summary": "TODO"
+    },
+    {
+        "affects": {
+            "io.jooby:jooby": [
+                "[,1.6.4)"
+            ]
+        },
+        "cve": "CVE-2019-15477",
+        "description": "Jooby before 1.6.4 has XSS via the default error handler.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.jooby:jooby"
+    },
+    {
+        "affects": {
+            "org.igniterealtime.openfire:xmppserver": [
+                "[,4.4.1)"
+            ]
+        },
+        "cve": "CVE-2019-15488",
+        "description": "Ignite Realtime Openfire before 4.4.1 has reflected XSS via an LDAP setup test.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.igniterealtime.openfire:xmppserver"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[0.7.0,1.2.0]"
+            ]
+        },
+        "cve": "CVE-2019-12397",
+        "description": "Policy import functionality in Apache Ranger 0.7.0 to 1.2.0 is vulnerable to a cross-site scripting issue. Upgrade to 2.0.0 or later version of Apache Ranger with the fix.",
+        "severity": "MODERATE",
+        "summary": "TODO"
+    },
+    {
+        "affects": {
+            "org.apache.spark:spark-core_2.11": [
+                "[,2.3.3)"
+            ]
+        },
+        "cve": "CVE-2019-10099",
+        "description": "Prior to Spark 2.3.3, in certain situations Spark would write user data to local disk unencrypted, even if spark.io.encryption.enabled=true. This includes cached blocks that are fetched to disk (controlled by spark.maxRemoteBlockSizeFetchToMem); in SparkR, using parallelize; in Pyspark, using broadcast and parallelize; and use of python udfs.",
+        "severity": "HIGH",
+        "summary": "TODO"
+    },
+    {
+        "affects": {
+            "org.apache.tika:tika-core": [
+                "[1.7,1.22)"
+            ]
+        },
+        "cve": "CVE-2019-10088",
+        "description": "A carefully crafted or corrupt zip file can cause an OOM in Apache Tika's RecursiveParserWrapper in versions 1.7-1.21. Users should upgrade to 1.22 or later.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.tika:tika-core"
+    },
+    {
+        "affects": {
+            "org.apache.tika:tika-parsers": [
+                "[1.19,1.22)"
+            ]
+        },
+        "cve": "CVE-2019-10093",
+        "description": "In Apache Tika 1.19 to 1.21, a carefully crafted 2003ml or 2006ml file could consume all available SAXParsers in the pool and lead to very long hangs. Apache Tika users should upgrade to 1.22 or later.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tika:tika-parsers"
+    },
+    {
+        "affects": {
+            "org.apache.tika:tika-core": [
+                "[1.7,1.22)"
+            ]
+        },
+        "cve": "CVE-2019-10094",
+        "description": "A carefully crafted package/compressed file that, when unzipped/uncompressed yields the same file (a quine), causes a StackOverflowError in Apache Tika's RecursiveParserWrapper in versions 1.7-1.21. Apache Tika users should upgrade to 1.22 or later.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.tika:tika-core"
+    },
+    {
+        "affects": {
+            "org.apache.solr:solr-core": [
+                "[,8.2.0)"
+            ]
+        },
+        "cve": "CVE-2019-0193",
+        "description": "In Apache Solr, the DataImportHandler, an optional but popular module to pull in data from databases and other sources, has a feature in which the whole DIH configuration can come from a request's \"dataConfig\" parameter. The debug mode of the DIH admin screen uses this to allow convenient debugging / development of a DIH config. Since a DIH config can contain scripts, this parameter is a security risk. Starting with version 8.2.0 of Solr, use of this parameter requires setting the Java System property \"enable.dih.dataConfigParam\" to true.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.solr:solr-core"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.9.2)"
+            ]
+        },
+        "cve": "CVE-2019-14379",
+        "description": "SubTypeValidator.java in FasterXML jackson-databind before 2.9.9.2 mishandles default typing when ehcache is used (because of net.sf.ehcache.transaction.manager.DefaultTransactionManagerLookup), leading to remote code execution.",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.9.2)"
+            ]
+        },
+        "cve": "CVE-2019-14439",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x before 2.9.9.2. This occurs when Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has the logback jar in the classpath.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "io.undertow:undertow-core": [
+                "[,2.0.23)"
+            ]
+        },
+        "cve": "CVE-2019-10184",
+        "description": "undertow before version 2.0.23.Final is vulnerable to an information leak issue. Web apps may have their directory structures predicted through requests without trailing slashes via the api.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects io.undertow:undertow-core"
+    },
+    {
+        "affects": {
+            "com.thoughtworks.xstream:xstream": [
+                "1.4.10"
+            ]
+        },
+        "cve": "CVE-2019-10173",
+        "description": "It was found that xstream API version 1.4.10 before 1.4.11 introduced a regression for a previous deserialization flaw. If the security framework has not been initialized, it may allow a remote attacker to run arbitrary shell commands when unmarshalling XML or any supported format. e.g. JSON. (regression of CVE-2013-7285)",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects com.thoughtworks.xstream:xstream"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.9.9.1)"
+            ]
+        },
+        "cve": "CVE-2019-12384",
+        "description": "FasterXML jackson-databind 2.x before 2.9.9.1 might allow attackers to have a variety of impacts by leveraging failure to block the logback-core class from polymorphic deserialization. Depending on the classpath content, remote code execution may be possible.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.4.0,9.4.16.v20190411)",
+                "[9.3.0,9.3.26.v20190403)",
+                "[,9.2.27.v20190403)"
+            ]
+        },
+        "cve": "CVE-2019-10241",
+        "description": "In Eclipse Jetty version 9.2.26 and older, 9.3.25 and older, and 9.4.15 and older, the server is vulnerable to XSS conditions if a remote client USES a specially formatted URL against the DefaultServlet or ResourceHandler that is configured for showing a Listing of directory contents.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.0.0,2.9.9.1)"
+            ]
+        },
+        "cve": "CVE-2019-12814",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x through 2.9.9. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint and the service has JDOM 1.x or 2.x jar in the classpath, an attacker can send a specifically crafted JSON message that allows them to read arbitrary local files on the server.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "org.apache.pdfbox:pdfbox": [
+                "[,2.0.15)"
+            ]
+        },
+        "cve": "CVE-2019-0228",
+        "description": "Apache PDFBox 2.0.14 does not properly initialize the XML parser, which allows context-dependent attackers to conduct XML External Entity (XXE) attacks via a crafted XFDF.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.pdfbox:pdfbox"
+    },
+    {
+        "affects": {
+            "io.hawt:hawtio-core": [
+                "[,2.5.0)"
+            ]
+        },
+        "cve": "CVE-2019-9827",
+        "description": "Hawt Hawtio through 2.5.0 is vulnerable to SSRF, allowing a remote attacker to trigger an HTTP request from an affected server to an arbitrary host via the initial /proxy/ substring of a URI.",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects io.hawt:hawtio-core"
+    },
+    {
+        "affects": {
+            "com.diffplug.spotless:spotless-plugin-maven": [
+                "[,1.20.0)"
+            ],
+            "com.diffplug.spotless:spotless-plugin-gradle": [
+                "[,3.20.0)"
+            ]
+        },
+        "cve": "CVE-2019-9843",
+        "description": "In DiffPlug Spotless before 1.20.0 (library and Maven plugin) and before 3.20.0 (Gradle plugin), the XML parser would resolve external entities over both HTTP and HTTPS and didn't respect the resolveExternalEntities setting. For example, this allows disclosure of file contents to a MITM attacker if a victim performs a spotlessApply operation on an untrusted XML file.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.diffplug.spotless:spotless-plugin-gradle and com.diffplug.spotless:spotless-plugin-maven"
+    },
+    {
+        "affects": {
+            "org.springframework.security:spring-security-core": [
+                "[4.2.0,4.2.13)"
+            ]
+        },
+        "cve": "CVE-2019-11272",
+        "description": "Spring Security, versions 4.2.x up to 4.2.12, and older unsupported versions support plain text passwords using PlaintextPasswordEncoder. If an application using an affected version of Spring Security is leveraging PlaintextPasswordEncoder and a user has a null encoded password, a malicious user (or attacker) can authenticate using a password of ?null?.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.springframework.security:spring-security-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,6.0.1]"
+            ]
+        },
+        "cve": "CVE-2019-3875",
+        "description": "A vulnerability was found in keycloak before 6.0.2. The X.509 authenticator supports the verification of client certificates through the CRL, where the CRL list can be obtained from the URL provided in the certificate itself (CDP) or through the separately configured path. The CRL are often available over the network through unsecured protocols ('http' or 'ldap') and hence the caller should verify the signature and possibly the certification path. Keycloak currently doesn't validate signatures on CRL, which can result in a possibility of various attacks like man-in-the-middle.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[8.5.0,8.5.40)",
+                "[9.0.0.M1,9.0.20]"
+            ]
+        },
+        "cve": "CVE-2019-10072",
+        "description": "The fix for CVE-2019-0199 was incomplete and did not address HTTP/2 connection window exhaustion on write in Apache Tomcat versions 9.0.0.M1 to 9.0.19 and 8.5.0 to 8.5.40 . By not sending WINDOW_UPDATE messages for the connection window (stream 0) clients were able to cause server-side threads to block eventually leading to thread exhaustion and a DoS.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tomcat.embed:tomcat-embed-core"
+    },
+    {
+        "affects": {
+            "ro.pippo:pippo-jaxb": [
+                "[,1.12.0]"
+            ]
+        },
+        "cve": "CVE-2019-5442",
+        "description": "XML Entity Expansion (Billion Laughs Attack) on Pippo 1.12.0 results in Denial of Service.Entities are created recursively and large amounts of heap memory is taken. Eventually, the JVM process will run out of memory. Otherwise, if the OS does not bound the memory on that process, memory will continue to be exhausted and will affect other processes on the system.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects ro.pippo:pippo-jaxb"
+    },
+    {
+        "affects": {
+            "org.springframework.security.oauth:spring-security-oauth": [
+                "[2.3.0,2.3.6)",
+                "[2.2.0,2.2.5)",
+                "[2.1.0,2.1.5)",
+                "[2.0.0,2.0.18)"
+            ]
+        },
+        "cve": "CVE-2019-11269",
+        "description": "Spring Security OAuth versions 2.3 prior to 2.3.6, 2.2 prior to 2.2.5, 2.1 prior to 2.1.5, and 2.0 prior to 2.0.18, as well as older unsupported versions could be susceptible to an open redirector attack that can leak an authorization code. A malicious user or attacker can craft a request to the authorization endpoint using the authorization code grant type, and specify a manipulated redirection URI via the redirect_uri parameter. This can cause the authorization server to redirect the resource owner user-agent to a URI under the control of the attacker with the leaked authorization code.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework.security.oauth:spring-security-oauth"
+    },
+    {
+        "affects": {
+            "io.undertow:undertow-core": [
+                "[,2.0.21)"
+            ]
+        },
+        "cve": "CVE-2019-3888",
+        "description": "A vulnerability was found in Undertow web server before 2.0.21. An information exposure of plain text credentials through log files because Connectors.executeRootHandler:402 logs the HttpServerExchange object at ERROR level using UndertowLogger.REQUEST_LOGGER.undertowRequestFailed(t, exchange)",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.undertow:undertow-core"
+    },
+    {
+        "affects": {
+            "ca.uhn.hapi.fhir:hapi-fhir-base": [
+                "[,3.8.0)"
+            ]
+        },
+        "cve": "CVE-2019-12741",
+        "description": "XSS exists in the HAPI FHIR testpage overlay module of the HAPI FHIR library before 3.8.0. The attack involves unsanitized HTTP parameters being output in a form page, allowing attackers to leak cookies and other sensitive information from ca/uhn/fhir/to/BaseController.java via a specially crafted URL. (This module is not generally used in production systems so the attack surface is expected to be low, but affected systems are recommended to upgrade immediately.)",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects ca.uhn.hapi.fhir:hapi-fhir-base"
+    },
+    {
+        "affects": {
+            "org.springframework.data:spring-data-jpa": [
+                "[,1.11.22)",
+                "(2.0.0,2.0.14]",
+                "(2.1.0,2.1.8)"
+            ]
+        },
+        "cve": "CVE-2019-3802",
+        "description": "This affects Spring Data JPA in versions up to and including 2.1.6, 2.0.14 and 1.11.20. ExampleMatcher using ExampleMatcher.StringMatcher.STARTING, ExampleMatcher.StringMatcher.ENDING or ExampleMatcher.StringMatcher.CONTAINING could return more results than anticipated when a maliciously crafted example value is supplied.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework.data:spring-data-jpa"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[7.0.0,7.0.94)",
+                "[8.0.0,8.5.40)",
+                "[9.0.0,9.0.17)"
+            ]
+        },
+        "cve": "CVE-2019-0221",
+        "description": "The SSI printenv command in Apache Tomcat 9.0.0.M1 to 9.0.0.17, 8.5.0 to 8.5.39 and 7.0.0 to 7.0.93 echoes user provided data without escaping and is, therefore, vulnerable to XSS. SSI is disabled by default. The printenv command is intended for debugging and is unlikely to be present in a production website.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tomcat.embed:tomcat-embed-core"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-main": [
+                "[2.9.0,2.11.0.M4)"
+            ],
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M4)"
+            ]
+        },
+        "cve": "CVE-2019-10078",
+        "description": "A carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki 2.9.0 to 2.11.0.M3, which could lead to session hijacking. Initial reporting indicated ReferredPagesPlugin, but further analysis showed that multiple plugins were vulnerable.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.jspwiki:jspwiki-main and org.apache.jspwiki:jspwiki-war"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-main": [
+                "[2.9.0,2.11.0.M4)"
+            ],
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M4)"
+            ]
+        },
+        "cve": "CVE-2019-10077",
+        "description": "A carefully crafted InterWiki link could trigger an XSS vulnerability on Apache JSPWiki 2.9.0 to 2.11.0.M3, which could lead to session hijacking.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.jspwiki:jspwiki-main and org.apache.jspwiki:jspwiki-war"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-main": [
+                "[2.9.0,2.11.0.M4)"
+            ],
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M4)"
+            ]
+        },
+        "cve": "CVE-2019-10076",
+        "description": "A carefully crafted malicious attachment could trigger an XSS vulnerability on Apache JSPWiki 2.9.0 to 2.11.0.M3, which could lead to session hijacking.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.jspwiki:jspwiki-main and org.apache.jspwiki:jspwiki-war"
+    },
+    {
+        "affects": {
+            "org.apache.zookeeper:zookeeper": [
+                "[3.5.0,3.5.5)",
+                "[1.0.0,3.4.14)"
+            ]
+        },
+        "cve": "CVE-2019-0201",
+        "description": "An issue is present in Apache ZooKeeper 1.0.0 to 3.4.13 and 3.5.0-alpha to 3.5.4-beta. ZooKeeper?s getACL() command doesn?t check any permission when retrieves the ACLs of the requested node and returns all information contained in the ACL Id field as plaintext string. DigestAuthenticationProvider overloads the Id field with the hash value that is used for user authentication. As a consequence, if Digest Authentication is in use, the unsalted hash value will be disclosed by getACL() request for unauthenticated or unprivileged users.",
+        "severity": "MODERATE",
+        "summary": "TODO"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "[,2.24.0)"
+            ]
+        },
+        "cve": "CVE-2019-0188",
+        "description": "Apache Camel prior to 2.24.0 contains an XML external entity injection (XXE) vulnerability (CWE-611) due to using an outdated vulnerable JSON-lib library. This affects only the camel-xmljson component, which was removed.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.0.0,2.9.9)"
+            ]
+        },
+        "cve": "CVE-2019-12086",
+        "description": "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x before 2.9.9. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint, the service has the mysql-connector-java jar (8.0.14 or earlier) in the classpath, and an attacker can host a crafted MySQL server reachable by the victim, an attacker can send a crafted JSON message that allows them to read arbitrary local files on the server. This occurs because of missing com.mysql.cj.jdbc.admin.MiniAdmin validation.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.api.datasets-asl": [
+                "[,1.10.0]"
+            ]
+        },
+        "cve": "CVE-2019-11082",
+        "description": "core/api/datasets/internal/actions/Explode.java in the Dataset API in DKPro Core through 1.10.0 allows Directory Traversal, resulting in the overwrite of local files with the contents of an archive.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.api.datasets-asl"
+    },
+    {
+        "affects": {
+            "io.ratpack:ratpack-groovy": [
+                "[,1.6.1)"
+            ],
+            "io.ratpack:ratpack-java": [
+                "[,1.6.1)"
+            ],
+            "io.ratpack:ratpack-session": [
+                "[,1.6.1)"
+            ]
+        },
+        "cve": "CVE-2019-11808",
+        "description": "Ratpack versions before 1.6.1 generate a session ID using a cryptographically weak PRNG in the JDK's ThreadLocalRandom. This means that if an attacker can determine a small window for the server start time and obtain a session ID value, they can theoretically determine the sequence of session IDs.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects io.ratpack:ratpack-groovy, io.ratpack:ratpack-java, and io.ratpack:ratpack-session"
+    },
+    {
+        "affects": {
+            "org.springframework.data:spring-data-jpa": [
+                "[2.1.0,2.1.6)",
+                "[2.0.0,2.0.14)",
+                "[,1.11.20)"
+            ]
+        },
+        "cve": "CVE-2019-3797",
+        "description": "This affects Spring Data JPA in versions up to and including 2.1.5, 2.0.13 and 1.11.19. Derived queries using any of the predicates ?startingWith?, ?endingWith? or ?containing? could return more results than anticipated when a maliciously crafted query parameter value is supplied. Also, LIKE expressions in manually defined queries could return unexpected results if the parameter values bound did not have escaped reserved characters properly.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.springframework.data:spring-data-jpa"
+    },
+    {
+        "affects": {
+            "org.springframework.cloud:spring-cloud-config-server": [
+                "[2.1.0,2.1.2)",
+                "[2.0.0,2.0.4)",
+                "[,1.4.6)"
+            ]
+        },
+        "cve": "CVE-2019-3799",
+        "description": "Spring Cloud Config, versions 2.1.x prior to 2.1.2, versions 2.0.x prior to 2.0.4, and versions 1.4.x prior to 1.4.6, and older unsupported versions allow applications to serve arbitrary configuration files through the spring-cloud-config-server module. A malicious user, or attacker, can send a request using a specially crafted URL that can lead a directory traversal attack.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework.cloud:spring-cloud-config-server"
+    },
+    {
+        "affects": {
+            "org.apache.archiva:archiva": [
+                "[,2.2.4)"
+            ]
+        },
+        "cve": "CVE-2019-0213",
+        "description": "In Apache Archiva before 2.2.4, it is possible to write files to the archiva server at arbitrary locations by using the artifact upload mechanism. Existing files can be overwritten, if the archiva run user has appropriate permission on the filesystem for the target file.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.archiva:archiva"
+    },
+    {
+        "affects": {
+            "org.apache.archiva:archiva": [
+                "[2.2.0,2.2.4)"
+            ]
+        },
+        "cve": "CVE-2019-0214",
+        "description": "In Apache Archiva 2.0.0 - 2.2.3, it is possible to write files to the archiva server at arbitrary locations by using the artifact upload mechanism. Existing files can be overwritten, if the archiva run user has appropriate permission on the filesystem for the target file.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.archiva:archiva"
+    },
+    {
+        "affects": {
+            "org.apache.axis:axis": [
+                "[,1.4]"
+            ]
+        },
+        "cve": "CVE-2019-0227",
+        "description": "A Server Side Request Forgery (SSRF) vulnerability affected the Apache Axis 1.4 distribution that was last released in 2006. Security and bug commits commits continue in the projects Axis 1.x Subversion repository, legacy users are encouraged to build from source. The successor to Axis 1.x is Axis2, the latest version is 1.7.9 and is not vulnerable to this issue.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.axis:axis"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "2.23.0",
+                "[2.22.0,2.22.3)",
+                "[2.21.0,2.21.3]"
+            ]
+        },
+        "cve": "CVE-2019-0194",
+        "description": "Apache Camel's File is vulnerable to directory traversal. Camel 2.21.0 to 2.21.3, 2.22.0 to 2.22.2, 2.23.0 and the unsupported Camel 2.x (2.19 and earlier) versions may be also affected.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,6.0.0)"
+            ]
+        },
+        "cve": "CVE-2019-3868",
+        "description": "Keycloak up to version 6.0.0 allows the end user token (access or id token JWT) to be used as the session cookie for browser sessions for OIDC. As a result an attacker with access to service provider backend could hijack user?s browser session.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.4.0,9.4.17.v20190418)",
+                "[9.3.0,9.3.27.v20190418)",
+                "[7.0.0,9.2.28.v20190418)"
+            ]
+        },
+        "cve": "CVE-2019-10247",
+        "description": "In Eclipse Jetty version 7.x, 8.x, 9.2.27 and older, 9.3.26 and older, and 9.4.16 and older, the server running on any OS and Jetty version combination will reveal the configured fully qualified directory base resource location on the output of the 404 error for not finding a Context that matches the requested path. The default server behavior on jetty-distribution and jetty-home will include at the end of the Handler tree a DefaultHandler, which is responsible for reporting this 404 error, it presents the various configured contexts as HTML for users to click through to. This produced HTML includes output that contains the configured fully qualified directory base resource location for each context.",
+        "severity": "MODERATE",
+        "summary": "Installation information leak in Eclipse Jetty"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.4.0,9.4.17.v20190418)",
+                "[9.3.0,9.3.27.v20190418)",
+                "[9.2.0,9.2.28.v20190418)"
+            ]
+        },
+        "cve": "CVE-2019-10246",
+        "description": "In Eclipse Jetty version 9.2.27, 9.3.26, and 9.4.16, the server running on Windows is vulnerable to exposure of the fully qualified Base Resource directory name on Windows to a remote client when it is configured for showing a Listing of directory contents. This information reveal is restricted to only the content in the configured base resource directories.",
+        "severity": "MODERATE",
+        "summary": "TODO"
+    },
+    {
+        "affects": {
+            "com.mchange:c3p0": [
+                "[,0.9.5.4)"
+            ]
+        },
+        "cve": "CVE-2019-5427",
+        "description": "c3p0 version < 0.9.5.4 may be exploited by a billion laughs attack when loading XML configuration due to missing protections against recursive entity expansion when loading configuration.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.mchange:c3p0"
+    },
+    {
+        "affects": {
+            "io.arrow-kt:arrow-ank-gradle": [
+                "[,0.9.0)"
+            ]
+        },
+        "cve": "CVE-2019-11404",
+        "description": "arrow-kt Arrow before 0.9.0 resolved Gradle build artifacts (for compiling and building the published JARs) over HTTP instead of HTTPS. Any of these dependent artifacts could have been maliciously compromised by an MITM attack.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.arrow-kt:arrow-ank-gradle"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[8.5.0,8.5.38)",
+                "[9.0.0.M1,9.0.14]"
+            ]
+        },
+        "cve": "CVE-2019-0199",
+        "description": "The HTTP/2 implementation in Apache Tomcat 9.0.0.M1 to 9.0.14 and 8.5.0 to 8.5.37 accepted streams with excessive numbers of SETTINGS frames and also permitted clients to keep streams open without reading/writing request/response data. By keeping streams open for requests that utilised the Servlet API's blocking I/O, clients were able to cause server-side threads to block eventually leading to thread exhaustion and a DoS.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tomcat.embed:tomcat-embed-core"
+    },
+    {
+        "affects": {
+            "com.ctrip.framework.apollo:apollo": [
+                "[,1.3.0]"
+            ]
+        },
+        "cve": "CVE-2019-10686",
+        "description": "An SSRF vulnerability was found in an API from Ctrip Apollo through 1.4.0-SNAPSHOT. An attacker may use it to do an intranet port scan or raise a GET request via /system-info/health because the %23 substring is mishandled.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.ctrip.framework.apollo:apollo"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[7.0.0,7.0.94)",
+                "[8.0.0,8.5.40)",
+                "[9.0.0,9.0.17)"
+            ]
+        },
+        "cve": "CVE-2019-0232",
+        "description": "When running on Windows with enableCmdLineArguments enabled, the CGI Servlet in Apache Tomcat 9.0.0.M1 to 9.0.17, 8.5.0 to 8.5.39 and 7.0.0 to 7.0.93 is vulnerable to Remote Code Execution due to a bug in the way the JRE passes command line arguments to Windows. The CGI Servlet is disabled by default. The CGI option enableCmdLineArguments is disable by default in Tomcat 9.0.x (and will be disabled by default in all versions in response to this vulnerability). For a detailed explanation of the JRE behaviour, see Markus Wulftange's blog (https://codewhitesec.blogspot.com/2016/02/java-and-command-line-injections-in-windows.html) and this archived MSDN blog (https://web.archive.org/web/20161228144344/https://blogs.msdn.microsoft.com/twistylittlepassagesallalike/2011/04/23/everyone-quotes-command-line-arguments-the-wrong-way/).",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.tomcat.embed:tomcat-embed-core"
+    },
+    {
+        "affects": {
+            "org.springframework.security:spring-security-core": [
+                "[5.1.0,5.1.5)",
+                "[5.0.0,5.0.12)",
+                "[4.2.0,4.2.12)"
+            ]
+        },
+        "cve": "CVE-2019-3795",
+        "description": "Spring Security versions 4.2.x prior to 4.2.12, 5.0.x prior to 5.0.12, and 5.1.x prior to 5.1.5 contain an insecure randomness vulnerability when using SecureRandomFactoryBean#setSeed to configure a SecureRandom instance. In order to be impacted, an honest application must provide a seed and make the resulting random material available to an attacker for inspection.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.springframework.security:spring-security-core"
+    },
+    {
+        "affects": {
+            "org.eclipse.hawkbit:hawkbit-boot-starter-ddi-api": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-boot-starter-dmf-api": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-boot-starter-mgmt-api": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-boot-starter-mgmt-ui": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-update-server": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-boot-starter": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-starters": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-parent": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-ui": [
+                "[,0.3.0M2)"
+            ],
+            "org.eclipse.hawkbit:hawkbit-autoconfigure": [
+                "[,0.3.0M2)"
+            ]
+        },
+        "cve": "CVE-2019-10240",
+        "description": "Eclipse hawkBit versions prior to 0.3.0M2 resolved Maven build artifacts for the Vaadin based UI over HTTP instead of HTTPS. Any of these dependent artifacts could have been maliciously compromised by a MITM attack. Hence produced build artifacts of hawkBit might be infected.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.eclipse.hawkbit:hawkbit-autoconfigure, org.eclipse.hawkbit:hawkbit-boot-starter, org.eclipse.hawkbit:hawkbit-boot-starter-ddi-api, org.eclipse.hawkbit:hawkbit-boot-starter-dmf-api, org.eclipse.hawkbit:hawkbit-boot-starter-mgmt-api, org.eclipse.hawkbit:hawkbit-boot-starter-mgmt-ui, org.eclipse.hawkbit:hawkbit-parent, org.eclipse.hawkbit:hawkbit-starters, org.eclipse.hawkbit:hawkbit-ui, and org.eclipse.hawkbit:hawkbit-update-server"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-builder": [
+                "[2.9.0,2.11.0.M3)"
+            ],
+            "org.apache.jspwiki:jspwiki-war": [
+                "[2.9.0,2.11.0.M3)"
+            ]
+        },
+        "cve": "CVE-2019-0225",
+        "description": "A specially crafted url could be used to access files under the ROOT directory of the application on Apache JSPWiki 2.9.0 to 2.11.0.M2, which could be used by an attacker to obtain registered users' details.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.jspwiki:jspwiki-builder and org.apache.jspwiki:jspwiki-war"
+    },
+    {
+        "affects": {
+            "com.github.shyiko.ktlint:ktlint-core": [
+                "[,0.30.0)"
+            ]
+        },
+        "cve": "CVE-2019-1010260",
+        "description": "Using ktlint to download and execute custom rulesets can result in arbitrary code execution as the served jars can be compromised by a MITM. This attack is exploitable via Man in the Middle of the HTTP connection to the artifact servers. This vulnerability appears to have been fixed in 0.30.0 and later; after commit 5e547b287d6c260d328a2cb658dbe6b7a7ff2261.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.github.shyiko.ktlint:ktlint-core"
+    },
+    {
+        "affects": {
+            "org.apache.hbase:hbase": [
+                "[2.1.0,2.1.4)",
+                "[2.0.0,2.0.5)"
+            ]
+        },
+        "cve": "CVE-2019-0212",
+        "description": "In all previously released Apache HBase 2.x versions (2.0.0-2.0.4, 2.1.0-2.1.3), authorization was incorrectly applied to users of the HBase REST server. Requests sent to the HBase REST server were executed with the permissions of the REST server itself, not with the permissions of the end-user. This issue is only relevant when HBase is configured with Kerberos authentication, HBase authorization is enabled, and the REST server is configured with SPNEGO authentication. This issue does not extend beyond the HBase REST server.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hbase:hbase"
+    },
+    {
+        "affects": {
+            "org.apache.jspwiki:jspwiki-main": [
+                "[2.9.0,2.11.0.M3)"
+            ]
+        },
+        "cve": "CVE-2019-0224",
+        "description": "In Apache JSPWiki 2.9.0 to 2.11.0.M2, a carefully crafted URL could execute javascript on another user's session. No information could be saved on the server or jspwiki database, nor would an attacker be able to execute js on someone else's browser; only on its own browser.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.jspwiki:jspwiki-main"
+    },
+    {
+        "affects": {
+            "org.apache.activemq:activemq-client": [
+                "[5.0.0,5.15.9)"
+            ]
+        },
+        "cve": "CVE-2019-0222",
+        "description": "In Apache ActiveMQ 5.0.0 - 5.15.8, unmarshalling corrupt MQTT frame can lead to broker Out of Memory exception making it unresponsive.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.activemq:activemq-client"
+    },
+    {
+        "affects": {
+            "net.sf.robocode:robocode.api": [
+                "[,1.9.3.6)"
+            ]
+        },
+        "cve": "CVE-2019-10648",
+        "description": "Robocode through 1.9.3.5 allows remote attackers to cause external service interaction (DNS), as demonstrated by a query for a unique subdomain name within an attacker-controlled DNS zone, because of a .openStream call within java.net.URL.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects net.sf.robocode:robocode.api"
+    },
+    {
+        "affects": {
+            "org.apache.karaf:apache-karaf": [
+                "[,4.2.3)"
+            ],
+            "org.apache.karaf:karaf": [
+                "[,4.2.3)"
+            ]
+        },
+        "cve": "CVE-2019-0191",
+        "description": "Apache Karaf kar deployer reads .kar archives and extracts the paths from the \"repository/\" and \"resources/\" entries in the zip file. It then writes out the content of these paths to the Karaf repo and resources directories. However, it doesn't do any validation on the paths in the zip file. This means that a malicious user could craft a .kar file with \"..\" directory names and break out of the directories to write arbitrary content to the filesystem. This is the \"Zip-slip\" vulnerability - https://snyk.io/research/zip-slip-vulnerability. This vulnerability is low if the Karaf process user has limited permission on the filesystem. Any Apache Karaf releases prior 4.2.3 is impacted.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.karaf:apache-karaf and org.apache.karaf:karaf"
+    },
+    {
+        "affects": {
+            "com.puppycrawl.tools:checkstyle": [
+                "[,8.18)"
+            ]
+        },
+        "cve": "CVE-2019-9658",
+        "description": "Checkstyle prior to 8.18 loads external DTDs by default, which can potentially lead to denial of service attacks or the leaking of confidential information.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.puppycrawl.tools:checkstyle"
+    },
+    {
+        "affects": {
+            "org.springframework.security.oauth:spring-security-oauth2": [
+                "[2.3.0,2.3.5)",
+                "[2.2.0,2.2.4)",
+                "[2.1.0,2.1.4)",
+                "[,2.0.17)"
+            ],
+            "org.springframework.security.oauth:spring-security-oauth": [
+                "[2.3.0,2.3.5)",
+                "[2.2.0,2.2.4)",
+                "[2.1.0,2.1.4)",
+                "[,2.0.17)"
+            ]
+        },
+        "cve": "CVE-2019-3778",
+        "description": "Spring Security OAuth, versions 2.3 prior to 2.3.5, and 2.2 prior to 2.2.4, and 2.1 prior to 2.1.4, and 2.0 prior to 2.0.17, and older unsupported versions could be susceptible to an open redirector attack that can leak an authorization code.\r\n\r\nA malicious user or attacker can craft a request to the authorization endpoint using the authorization code grant type, and specify a manipulated redirection URI via the \"redirect_uri\" parameter. This can cause the authorization server to redirect the resource owner user-agent to a URI under the control of the attacker with the leaked authorization code.\r\n\r\nThis vulnerability exposes applications that meet all of the following requirements: Act in the role of an Authorization Server (e.g. @EnableAuthorizationServer) and uses the DefaultRedirectResolver in the AuthorizationEndpoint. \r\n\r\nThis vulnerability does not expose applications that: Act in the role of an Authorization Server and uses a different RedirectResolver implementation other than DefaultRedirectResolver, act in the role of a Resource Server only (e.g. @EnableResourceServer), act in the role of a Client only (e.g. @EnableOAuthClient).",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects org.springframework.security.oauth:spring-security-oauth and org.springframework.security.oauth:spring-security-oauth2"
+    },
+    {
+        "affects": {
+            "org.apache.solr:solr-core": [
+                "[6.0.0,6.6.5]",
+                "[5.0.0,5.5.5]"
+            ]
+        },
+        "cve": "CVE-2019-0192",
+        "description": "In Apache Solr versions 5.0.0 to 5.5.5 and 6.0.0 to 6.6.5, the Config API allows to configure the JMX server via an HTTP POST request. By pointing it to a malicious RMI server, an attacker could take advantage of Solr's unsafe deserialization to trigger remote code execution on the Solr side.",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects org.apache.solr:solr-core"
+    },
+    {
+        "affects": {
+            "org.apache.qpid:apache-qpid-broker-j": [
+                "7.1.0",
+                "[,7.0.7)"
+            ]
+        },
+        "cve": "CVE-2019-0200",
+        "description": "A Denial of Service vulnerability was found in Apache Qpid Broker-J versions 6.0.0-7.0.6 (inclusive) and 7.1.0 which allows an unauthenticated attacker to crash the broker instance by sending specially crafted commands using AMQP protocol versions below 1.0 (AMQP 0-8, 0-9, 0-91 and 0-10). Users of Apache Qpid Broker-J versions 6.0.0-7.0.6 (inclusive) and 7.1.0 utilizing AMQP protocols 0-8, 0-9, 0-91, 0-10 must upgrade to Qpid Broker-J versions 7.0.7 or 7.1.1 or later.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.apache.qpid:apache-qpid-broker-j"
+    },
+    {
+        "affects": {
+            "org.apache.jmeter:ApacheJMeter": [
+                "[,5.1)"
+            ]
+        },
+        "cve": "CVE-2019-0187",
+        "description": "Unauthenticated RCE is possible when JMeter is used in distributed mode (-r or -R command line options). Attacker can establish a RMI connection to a jmeter-server using RemoteJMeterEngine and proceed with an attack using untrusted data deserialization. This only affect tests running in Distributed mode. Note that versions before 4.0 are not able to encrypt traffic between the nodes, nor authenticate the participating nodes so upgrade to JMeter 5.1 is also advised.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.apache.jmeter:ApacheJMeter"
+    },
+    {
+        "affects": {
+            "org.b3log:symphony": [
+                "[,3.4.7)"
+            ]
+        },
+        "cve": "CVE-2019-9142",
+        "description": "An issue was discovered in b3log Symphony (aka Sym) before v3.4.7. XSS exists via the userIntro and userNickname fields to processor/SettingsProcessor.java.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.b3log:symphony"
+    },
+    {
+        "affects": {
+            "com.alipay.sofa:hessian": [
+                "[,3.3.6)",
+                "[4.0.0,4.0.2)"
+            ]
+        },
+        "cve": "CVE-2019-9212",
+        "description": "SOFA-Hessian through 4.0.2 allows remote attackers to execute arbitrary commands via a crafted serialized Hessian object because blacklisting of com.caucho.naming.QName and com.sun.org.apache.xpath.internal.objects.XString is mishandled, related to Resin Gadget.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.alipay.sofa:hessian"
+    },
+    {
+        "affects": {
+            "org.springframework.batch:spring-batch-core": [
+                "4.1.0",
+                "[4.0.0,4.0.2)",
+                "[,3.0.10)"
+            ]
+        },
+        "cve": "CVE-2019-3774",
+        "description": "Spring Batch versions 3.0.9, 4.0.1, 4.1.0, and older unsupported versions, were susceptible to XML External Entity Injection (XXE) when receiving XML data from untrusted sources.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.springframework.batch:spring-batch-core"
+    },
+    {
+        "affects": {
+            "org.springframework.ws:spring-xml": [
+                "[3.0.0,3.0.4]",
+                "[,2.4.4)"
+            ],
+            "org.springframework.ws:spring-ws": [
+                "[3.0.0,3.0.4]",
+                "[,2.4.4)"
+            ]
+        },
+        "cve": "CVE-2019-3773",
+        "description": "Spring Web Services, versions 2.4.3, 3.0.4, and older unsupported versions of all three projects, were susceptible to XML External Entity Injection (XXE) when receiving XML data from untrusted sources.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.springframework.ws:spring-ws and org.springframework.ws:spring-xml"
+    },
+    {
+        "affects": {
+            "org.springframework.integration:spring-integration-ws": [
+                "[5.1.0,5.1.2)",
+                "[5.0.0,5.0.11)",
+                "[,4.3.19)"
+            ],
+            "org.springframework.integration:spring-integration-xml": [
+                "[5.1.0,5.1.2)",
+                "[5.0.0,5.0.11)",
+                "[,4.3.19)"
+            ]
+        },
+        "cve": "CVE-2019-3772",
+        "description": "Spring Integration (spring-integration-xml and spring-integration-ws modules), versions 4.3.18, 5.0.10, 5.1.1, and older unsupported versions, were susceptible to XML External Entity Injection (XXE) when receiving XML data from untrusted sources.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.springframework.integration:spring-integration-ws and org.springframework.integration:spring-integration-xml"
+    }
+]

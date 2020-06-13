@@ -1,0 +1,736 @@
+[
+    {
+        "affects": {
+            "org.apache.logging.log4j:log4j": [
+                "[2.0,2.8.2)"
+            ]
+        },
+        "cve": "CVE-2017-5645",
+        "description": "In Apache Log4j 2.x before 2.8.2, when using the TCP socket server or UDP socket server to receive serialized log events from another application, a specially crafted binary payload can be sent that, when deserialized, can execute arbitrary code.",
+        "severity": "MODERATE",
+        "summary": "Deserialization of Untrusted Data in Log4j"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-rest-plugin": [
+                "[,2.3.34)",
+                "[2.5.0,2.5.12]"
+            ]
+        },
+        "cve": "CVE-2017-9793",
+        "description": "The REST Plugin in Apache Struts 2.3.7 through 2.3.33 and 2.5 through 2.5.12 is using an outdated XStream library which is vulnerable and allow perform a DoS attack using malicious request with specially crafted XML payload.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.struts:struts2-rest-plugin"
+    },
+    {
+        "affects": {
+            "org.apache.geode:geode-core": [
+                "[,1.9.0)"
+            ]
+        },
+        "cve": "CVE-2017-15694",
+        "description": "When an Apache Geode server versions 1.0.0 to 1.8.0 is operating in secure mode, a user with write permissions for specific data regions can modify internal cluster metadata. A malicious user could modify this data in a way that affects the operation of the cluster.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.geode:geode-core"
+    },
+    {
+        "affects": {
+            "org.apache.zeppelin:zeppelin": [
+                "[,0.7.3)"
+            ]
+        },
+        "cve": "CVE-2017-12619",
+        "description": "Apache Zeppelin prior to 0.7.3 was vulnerable to session fixation which allowed an attacker to hijack a valid user session. Issue was reported by \"stone lone\".",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.zeppelin:zeppelin"
+    },
+    {
+        "affects": {
+            "org.apache.solr:solr-core": [
+                "[1.30,7.6.0]"
+            ]
+        },
+        "cve": "CVE-2017-3164",
+        "description": "Server Side Request Forgery in Apache Solr, versions 1.3 until 7.6 (inclusive). Since the \"shards\" parameter does not have a corresponding whitelist mechanism, a remote attacker with access to the server could make Solr perform an HTTP GET request to any reachable URL.",
+        "severity": "LOW",
+        "summary": "Low severity vulnerability that affects org.apache.solr:solr-core"
+    },
+    {
+        "affects": {
+            "org.apache.hive:hive-service": [
+                "2.3.0",
+                "2.2.0",
+                "[2.1.0,2.1.2)"
+            ],
+            "org.apache.hive:hive-exec": [
+                "2.3.0",
+                "2.2.0",
+                "[2.1.0,2.1.2)"
+            ],
+            "org.apache.hive:hive": [
+                "2.3.0",
+                "2.2.0",
+                "[2.1.0,2.1.2)"
+            ]
+        },
+        "cve": "CVE-2017-12625",
+        "description": "Apache Hive 2.1.x before 2.1.2, 2.2.x before 2.2.1, and 2.3.x before 2.3.1 expose an interface through which masking policies can be defined on tables or views, e.g., using Apache Ranger. When a view is created over a given table, the policy enforcement does not happen correctly on the table for masked columns.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hive:hive, org.apache.hive:hive-exec, and org.apache.hive:hive-service"
+    },
+    {
+        "affects": {
+            "org.apache.hadoop:hadoop-main": [
+                "[2.7.3,2.7.4]"
+            ]
+        },
+        "cve": "CVE-2017-15718",
+        "description": "The YARN NodeManager in Apache Hadoop 2.7.3 and 2.7.4 can leak the password for credential store provider used by the NodeManager to YARN Applications.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hadoop:hadoop-main"
+    },
+    {
+        "affects": {
+            "org.apache.hadoop:hadoop-main": [
+                "[2.8.0,2.8.3)",
+                "[,2.7.5)"
+            ]
+        },
+        "cve": "CVE-2017-15713",
+        "description": "Vulnerability in Apache Hadoop 0.23.x, 2.x before 2.7.5, 2.8.x before 2.8.3, and 3.0.0-alpha through 3.0.0-beta1 allows a cluster user to expose private files owned by the user running the MapReduce job history server process. The malicious user can construct a configuration file containing XML directives that reference sensitive files on the MapReduce job history server host.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hadoop:hadoop-main"
+    },
+    {
+        "affects": {
+            "org.apache.hadoop:hadoop-main": [
+                "[,2.7.3)"
+            ]
+        },
+        "cve": "CVE-2017-3166",
+        "description": "In Apache Hadoop versions 2.6.1 to 2.6.5, 2.7.0 to 2.7.3, and 3.0.0-alpha1, if a file in an encryption zone with access permissions that make it world readable is localized via YARN's localization mechanism, that file will be stored in a world-readable location and can be shared freely with any application that requests to localize that file.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.hadoop:hadoop-main"
+    },
+    {
+        "affects": {
+            "org.apache.spark:spark-core_2.10": [
+                "[,2.1.2)"
+            ],
+            "org.apache.spark:spark-core_2.11": [
+                "[,2.1.2)"
+            ]
+        },
+        "cve": "CVE-2017-12612",
+        "description": "In Apache Spark 1.6.0 until 2.1.1, the launcher API performs unsafe deserialization of data received by its socket. This makes applications launched programmatically using the launcher API potentially vulnerable to arbitrary code execution by an attacker with access to any user account on the local machine. It does not affect apps run by spark-submit or spark-shell. The attacker would be able to execute code as the user that ran the Spark application. Users are encouraged to update to version 2.1.2, 2.2.0 or later.\r\n\r\n",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.spark:spark-core_2.10 and org.apache.spark:spark-core_2.11"
+    },
+    {
+        "affects": {
+            "org.apache.spark:spark-core_2.10": [
+                "[,2.2.0)"
+            ],
+            "org.apache.spark:spark-core_2.11": [
+                "[,2.2.0)"
+            ]
+        },
+        "cve": "CVE-2017-7678",
+        "description": "In Apache Spark before 2.2.0, it is possible for an attacker to take advantage of a user's trust in the server to trick them into visiting a link that points to a shared Spark cluster and submits data including MHTML to the Spark master, or history server. This data, which could contain a script, would then be reflected back to the user and could be evaluated and executed by MS Windows-based clients. It is not an attack on Spark itself, but on the user, who may then execute the script inadvertently when viewing elements of the Spark web UIs.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.spark:spark-core_2.10 and org.apache.spark:spark-core_2.11"
+    },
+    {
+        "affects": {
+            "com.alibaba:fastjson": [
+                "[,1.2.24]"
+            ]
+        },
+        "cve": "CVE-2017-18349",
+        "description": "parseObject in Fastjson before 1.2.25, as used in FastjsonEngine in Pippo 1.11.0 and other products, allows remote attackers to execute arbitrary code via a crafted JSON request, as demonstrated by a crafted rmi:// URI in the dataSourceName field of HTTP POST data to the Pippo /json URI, which is mishandled in AjaxApplication.java.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.alibaba:fastjson"
+    },
+    {
+        "affects": {
+            "com.typesafe.akka:akka-http-core_2.11": [
+                "[,10.0.6)"
+            ],
+            "com.typesafe.akka:akka-http-core_2.12": [
+                "[,10.0.6)"
+            ]
+        },
+        "cve": "CVE-2017-1000118",
+        "description": "Akka HTTP versions <= 10.0.5 Illegal Media Range in Accept Header Causes StackOverflowError Leading to Denial of Service",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.typesafe.akka:akka-http-core_2.11 and com.typesafe.akka:akka-http-core_2.12"
+    },
+    {
+        "affects": {
+            "com.typesafe.akka:akka-actor_2.11": [
+                "[,2.4.17)"
+            ],
+            "com.typesafe.akka:akka-actor_2.12": [
+                "[,2.4.17)"
+            ]
+        },
+        "cve": "CVE-2017-1000034",
+        "description": "Akka versions <=2.4.16 and 2.5-M1 are vulnerable to a java deserialization attack in its Remoting component resulting in remote code execution in the context of the ActorSystem.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.typesafe.akka:akka-actor_2.11 and com.typesafe.akka:akka-actor_2.12"
+    },
+    {
+        "affects": {
+            "com.jason-goodwin:authentikat-jwt_2.12": [
+                "[,0.4.5]"
+            ]
+        },
+        "cve": "CVE-2017-18239",
+        "description": "A time-sensitive equality check on the JWT signature in the JsonWebToken.validate method in main/scala/authentikat/jwt/JsonWebToken.scala in authentikat-jwt (aka com.jason-goodwin/authentikat-jwt) version 0.4.5 and earlier allows the supplier of a JWT token to guess bit after bit of the signature by repeating validation requests.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.jason-goodwin:authentikat-jwt_2.12"
+    },
+    {
+        "affects": {
+            "io.undertow:undertow-core": [
+                "[1.4.0,1.4.17)",
+                "[,1.3.31)"
+            ]
+        },
+        "cve": "CVE-2017-2666",
+        "description": "It was discovered in Undertow that the code that parsed the HTTP request line permitted invalid characters. This could be exploited, in conjunction with a proxy that also permitted the invalid characters but with a different interpretation, to inject data into the HTTP response. By manipulating the HTTP response the attacker could poison a web-cache, perform an XSS attack, or obtain sensitive information from requests other than their own.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects io.undertow:undertow-core"
+    },
+    {
+        "affects": {
+            "io.undertow:undertow-core": [
+                "[,1.3.28)"
+            ]
+        },
+        "cve": "CVE-2017-2670",
+        "description": "It was found in Undertow before 1.3.28 that with non-clean TCP close, the Websocket server gets into infinite loop on every IO thread, effectively causing DoS.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.undertow:undertow-core"
+    },
+    {
+        "affects": {
+            "com.kitfox.svg:svg-salamander": [
+                "[,1.1.2)"
+            ]
+        },
+        "cve": "CVE-2017-5617",
+        "description": "The SVG Salamander (aka svgSalamander) library, when used in a web application, allows remote attackers to conduct server-side request forgery (SSRF) attacks via an xlink:href attribute in an SVG file.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.kitfox.svg:svg-salamander"
+    },
+    {
+        "affects": {
+            "org.scala-lang:scala-compiler": [
+                "[2.12.0,2.12.4)",
+                "[2.11.0,2.11.12)",
+                "[,2.10.7)"
+            ]
+        },
+        "cve": "CVE-2017-15288",
+        "description": "The compilation daemon in Scala before 2.10.7, 2.11.x before 2.11.12, and 2.12.x before 2.12.4 uses weak permissions for private files in /tmp/scala-devel/${USER:shared}/scalac-compile-server-port, which allows local users to write to arbitrary class files and consequently gain privileges.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.scala-lang:scala-compiler"
+    },
+    {
+        "affects": {
+            "org.asynchttpclient:async-http-client": [
+                "[,2.0.35)"
+            ]
+        },
+        "cve": "CVE-2017-14063",
+        "description": "Async Http Client (aka async-http-client) before 2.0.35 can be tricked into connecting to a host different from the one extracted by java.net.URI if a '?' character occurs in a fragment identifier. Similar bugs were previously identified in cURL (CVE-2016-8624) and Oracle Java 8 java.net.URL.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.asynchttpclient:async-http-client"
+    },
+    {
+        "affects": {
+            "com.caverock:androidsvg": [
+                "[,1.3)"
+            ]
+        },
+        "cve": "CVE-2017-1000498",
+        "description": "AndroidSVG version 1.2.2 is vulnerable to XXE attacks in the SVG parsing component resulting in denial of service and possibly remote code execution",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects com.caverock:androidsvg"
+    },
+    {
+        "affects": {
+            "io.swagger:swagger-parser": [
+                "[,1.0.31)"
+            ],
+            "io.swagger:swagger-codegen": [
+                "[,2.2.2)"
+            ]
+        },
+        "cve": "CVE-2017-1000208",
+        "description": "A vulnerability in Swagger-Parser's (version <= 1.0.30) yaml parsing functionality results in arbitrary code being executed when a maliciously crafted yaml Open-API specification is parsed. This in particular, affects the 'generate' and 'validate' command in swagger-codegen (<= 2.2.2) and can lead to arbitrary code being executed when these commands are used on a well-crafted yaml specification.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.swagger:swagger-codegen and io.swagger:swagger-parser"
+    },
+    {
+        "affects": {
+            "io.swagger:swagger-codegen": [
+                "[,2.2.2)"
+            ],
+            "io.swagger:swagger-parser": [
+                "[,1.0.31)"
+            ]
+        },
+        "cve": "CVE-2017-1000207",
+        "description": "A vulnerability in Swagger-Parser's version <= 1.0.30 and Swagger codegen version <= 2.2.2 yaml parsing functionality results in arbitrary code being executed when a maliciously crafted yaml Open-API specification is parsed. This in particular, affects the 'generate' and 'validate' command in swagger-codegen (<= 2.2.2) and can lead to arbitrary code being executed when these commands are used on a well-crafted yaml specification.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects io.swagger:swagger-codegen and io.swagger:swagger-parser"
+    },
+    {
+        "affects": {
+            "org.apache.qpid:qpid-broker": [
+                "[6.1.0,6.1.5)"
+            ]
+        },
+        "cve": "CVE-2017-15701",
+        "description": "In Apache Qpid Broker-J versions 6.1.0 through 6.1.4 (inclusive) the broker does not properly enforce a maximum frame size in AMQP 1.0 frames. A remote unauthenticated attacker could exploit this to cause the broker to exhaust all available memory and eventually terminate.  Older AMQP protocols are not affected.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.qpid:qpid-broker"
+    },
+    {
+        "affects": {
+            "org.apache.qpid:qpid-broker": [
+                "[0.18,0.32]"
+            ]
+        },
+        "cve": "CVE-2017-15702",
+        "description": "In Apache Qpid Broker-J 0.18 through 0.32, if the broker is configured with different authentication providers on different ports one of which is an HTTP port, then the broker can be tricked by a remote unauthenticated attacker connecting to the HTTP port into using an authentication provider that was configured on a different port. The attacker still needs valid credentials with the authentication provider on the spoofed port. This becomes an issue when the spoofed port has weaker authentication protection (e.g., anonymous access, default accounts) and is normally protected by firewall rules or similar which can be circumvented by this vulnerability. AMQP ports are not affected. Versions 6.0.0 and newer are not affected.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.qpid:qpid-broker"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.4.0,9.4.11.v20180605)",
+                "[9.3.0,9.3.24.v20180605)",
+                "(9.2.0,9.2.25.v20180606)"
+            ]
+        },
+        "cve": "CVE-2017-7658",
+        "description": "In Eclipse Jetty Server, versions 9.2.x and older, 9.3.x (all non HTTP/1.x configurations), and 9.4.x (all HTTP/1.x configurations), when presented with two content-lengths headers, Jetty ignored the second. When presented with a content-length and a chunked encoding header, the content-length was ignored (as per RFC 2616). If an intermediary decided on the shorter length, but still passed on the longer body, then body content could be interpreted by Jetty as a pipelined request. If the intermediary was imposing authorization, the fake pipelined request would bypass that authorization.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.4.0,9.4.11.v20180605)",
+                "[,9.3.24.v20180605)"
+            ]
+        },
+        "cve": "CVE-2017-7656",
+        "description": "In Eclipse Jetty, versions 9.2.x and older, 9.3.x (all configurations), and 9.4.x (non-default configuration with RFC2616 compliance enabled), HTTP/0.9 is handled poorly. An HTTP/1 style request line (i.e. method space URI space version) that declares a version of HTTP/0.9 was accepted and treated as a 0.9 request. If deployed behind an intermediary that also accepted and passed through the 0.9 version (but did not act on it), then the response sent could be interpreted by the intermediary as HTTP/1 headers. This could be used to poison the cache if the server allowed the origin client to generate arbitrary content in the response.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.2.0,9.2.22.v20170606)",
+                "[9.3.0,9.3.20.v20170531)",
+                "[9.4.0,9.4.6.v20170531)"
+            ]
+        },
+        "cve": "CVE-2017-9735",
+        "description": "Jetty through 9.4.x is prone to a timing channel in util/security/Password.java, which makes it easier for remote attackers to obtain access by observing elapsed times before rejection of incorrect passwords.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "org.eclipse.jetty:jetty-server": [
+                "[9.3.0,9.3.24.v20180605)",
+                "[,9.2.25.v20180606)"
+            ]
+        },
+        "cve": "CVE-2017-7657",
+        "description": "In Eclipse Jetty, versions 9.2.x and older, 9.3.x, transfer-encoding chunks are handled poorly. The chunk length parsing was vulnerable to an integer overflow. Thus a large chunk size could be interpreted as a smaller chunk size and content sent as chunk body could be interpreted as a pipelined request. If Jetty was deployed behind an intermediary that imposed some authorization and that intermediary allowed arbitrarily large chunks to be passed on unchanged, then this flaw could be used to bypass the authorization imposed by the intermediary as the fake pipelined request would not be interpreted by the intermediary as a request.",
+        "severity": "CRITICAL",
+        "summary": "Critical severity vulnerability that affects org.eclipse.jetty:jetty-server"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-core": [
+                "[2.5.0,2.5.10.1)",
+                "[2.3.0,2.3.32)"
+            ]
+        },
+        "cve": "CVE-2017-5638",
+        "description": "The Jakarta Multipart parser in Apache Struts 2 2.3.x before 2.3.32 and 2.5.x before 2.5.10.1 has incorrect exception handling and error-message generation during file-upload attempts, which allows remote attackers to execute arbitrary commands via a crafted Content-Type, Content-Disposition, or Content-Length HTTP header, as exploited in the wild in March 2017 with a Content-Type header containing a #cmd= string.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.struts:struts2-core"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[,2.8.11)",
+                "[2.9.0,2.9.4)"
+            ]
+        },
+        "cve": "CVE-2017-17485",
+        "description": "FasterXML jackson-databind through 2.8.10 and 2.9.x through 2.9.3 allows unauthenticated remote code execution because of an incomplete fix for the CVE-2017-7525 deserialization flaw. This is exploitable by sending maliciously crafted JSON input to the readValue method of the ObjectMapper, bypassing a blacklist that is ineffective if the Spring libraries are available in the classpath.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.9.0,2.9.4)",
+                "[,2.8.11)"
+            ]
+        },
+        "cve": "CVE-2017-15095",
+        "description": "A deserialization flaw was discovered in the jackson-databind in versions before 2.8.10 and 2.9.1, which could allow an unauthenticated user to perform code execution by sending the maliciously crafted input to the readValue method of the ObjectMapper. This issue extends the previous flaw CVE-2017-7525 by blacklisting more classes that could be used maliciously.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "com.orientechnologies:orientdb-core": [
+                "[,2.2.23)"
+            ]
+        },
+        "cve": "CVE-2017-11467",
+        "description": "OrientDB through 2.2.22 does not enforce privilege requirements during \"where\" or \"fetchplan\" or \"order by\" use, which allows remote attackers to execute arbitrary OS commands via a crafted request.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.orientechnologies:orientdb-core"
+    },
+    {
+        "affects": {
+            "org.owasp.antisamy:antisamy": [
+                "[,1.5.7)"
+            ]
+        },
+        "cve": "CVE-2017-14735",
+        "description": "OWASP AntiSamy before 1.5.7 allows XSS via HTML5 entities, as demonstrated by use of &colon; to construct a javascript: URL.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.owasp.antisamy:antisamy"
+    },
+    {
+        "affects": {
+            "org.apache.cxf.fediz:fediz-spring": [
+                "[1.4.0,1.4.3)",
+                "[,1.3.3)"
+            ],
+            "org.apache.cxf.fediz:fediz-spring3": [
+                "[1.4.0,1.4.3)",
+                "[,1.3.3)"
+            ],
+            "org.apache.cxf.fediz:fediz-spring2": [
+                "[1.4.0,1.4.3)",
+                "[,1.3.3)"
+            ]
+        },
+        "cve": "CVE-2017-12631",
+        "description": "Apache CXF Fediz ships with a number of container-specific plugins to enable WS-Federation for applications. A CSRF (Cross Style Request Forgery) style vulnerability has been found in the Spring 2, Spring 3 and Spring 4 plugins in versions before 1.4.3 and 1.3.3. The vulnerability can result in a security context that is set up using a malicious client's roles for the given enduser.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.cxf.fediz:fediz-spring, org.apache.cxf.fediz:fediz-spring2, and org.apache.cxf.fediz:fediz-spring3"
+    },
+    {
+        "affects": {
+            "org.apache.cxf.fediz:fediz-jetty8": [
+                "[,1.3.2)"
+            ],
+            "org.apache.cxf.fediz:fediz-jetty9": [
+                "[,1.3.2)"
+            ],
+            "org.apache.cxf.fediz:fediz-spring2": [
+                "[,1.2.4)",
+                "[1.3.0,1.3.2)"
+            ]
+        },
+        "cve": "CVE-2017-7661",
+        "description": "Apache CXF Fediz ships with a number of container-specific plugins to enable WS-Federation for applications. A CSRF (Cross Style Request Forgery) style vulnerability has been found in the Spring 2, Spring 3, Jetty 8 and Jetty 9 plugins in Apache CXF Fediz prior to 1.4.0, 1.3.2 and 1.2.4.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.cxf.fediz:fediz-jetty8, org.apache.cxf.fediz:fediz-jetty9, and org.apache.cxf.fediz:fediz-spring2"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,3.4.2)"
+            ]
+        },
+        "cve": "CVE-2017-12161",
+        "description": "It was found that keycloak before 3.4.2 final would permit misuse of a client-side /etc/hosts entry to spoof a URL in a password reset request. An attacker could use this flaw to craft a malicious password reset request and gain a valid reset token, leading to information disclosure or further attacks.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,2.5.1)"
+            ]
+        },
+        "cve": "CVE-2017-2582",
+        "description": "It was found that while parsing the SAML messages the StaxParserUtil class of keycloak before 2.5.1 replaces special strings for obtaining attribute values with system property. This could allow an attacker to determine values of system properties at the attacked system by formatting the SAML request ID field to be the chosen system property which could be obtained in the \"InResponseTo\" field in the response.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,2.5.5)"
+            ]
+        },
+        "cve": "CVE-2017-2646",
+        "description": "It was found that when Keycloak before 2.5.5 receives a Logout request with a Extensions in the middle of the request, the SAMLSloRequestParser.parse() method ends in a infinite loop. An attacker could use this flaw to conduct denial of service attacks.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,2.0.0)"
+            ]
+        },
+        "cve": "CVE-2017-1000500",
+        "description": "Keycloak SSO versions prior to 2.x are vulnerable to Host Header Injection on the forgot password page causing the application to send a poisoned URL as the password reset link.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.keycloak:keycloak-core": [
+                "[,2.5.1)"
+            ]
+        },
+        "cve": "CVE-2017-2585",
+        "description": "Red Hat Keycloak before version 2.5.1 has an implementation of HMAC verification for JWS tokens that uses a method that runs in non-constant time, potentially leaving the application vulnerable to timing attacks.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.keycloak:keycloak-core"
+    },
+    {
+        "affects": {
+            "org.apache.solr:solr-core": [
+                "[6.0.0,6.4.1)",
+                "[,5.5.4)"
+            ]
+        },
+        "cve": "CVE-2017-3163",
+        "description": "When using the Index Replication feature, Apache Solr nodes can pull index files from a master/leader node using an HTTP API which accepts a file name. However, Solr before 5.5.4 and 6.x before 6.4.1 did not validate the file name, hence it was possible to craft a special request involving path traversal, leaving any file readable to the Solr server process exposed. Solr servers protected and restricted by firewall rules and/or authentication would not be at risk since only trusted clients and users would gain direct HTTP access.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.solr:solr-core"
+    },
+    {
+        "affects": {
+            "org.apache.lucene:lucene-core": [
+                "[,7.1.0)"
+            ],
+            "org.apache.solr:solr-core": [
+                "[,7.1.0)"
+            ]
+        },
+        "cve": "CVE-2017-12629",
+        "description": "Remote code execution occurs in Apache Solr before 7.1 with Apache Lucene before 7.1 by exploiting XXE in conjunction with use of a Config API add-listener command to reach the RunExecutableListener class. Elasticsearch, although it uses Lucene, is NOT vulnerable to this. Note that the XML external entity expansion vulnerability occurs in the XML Query Parser which is available, by default, for any query request with parameters deftype=xmlparser and can be exploited to upload malicious data to the /upload request handler or as Blind XXE using ftp wrapper in order to read arbitrary local files from the Solr server. Note also that the second vulnerability relates to remote code execution using the RunExecutableListener available on all affected versions of Solr.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.lucene:lucene-core and org.apache.solr:solr-core"
+    },
+    {
+        "affects": {
+            "org.apache.storm:storm-core": [
+                "[1.0.0,1.0.4)",
+                "1.1.0"
+            ]
+        },
+        "cve": "CVE-2017-9799",
+        "description": "It was found that under some situations and configurations of Apache Storm 1.x before 1.0.4 and 1.1.x before 1.1.1, it is theoretically possible for the owner of a topology to trick the supervisor to launch a worker as a different, non-root, user. In the worst case this could lead to secure credentials of the other user being compromised.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.storm:storm-core"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.7.1)"
+            ]
+        },
+        "cve": "CVE-2017-7677",
+        "description": "In environments that use external location for hive tables, Hive Authorizer in Apache Ranger before 0.7.1 should be checking RWX permission for create table.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.ranger:ranger": [
+                "[,0.7.1)"
+            ]
+        },
+        "cve": "CVE-2017-7676",
+        "description": "Policy resource matcher in Apache Ranger before 0.7.1 ignores characters after '*' wildcard character - like my*test, test*.txt. This can result in unintended behavior.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ranger:ranger"
+    },
+    {
+        "affects": {
+            "org.apache.tomcat.embed:tomcat-embed-core": [
+                "[7.0.0,7.0.79)"
+            ]
+        },
+        "cve": "CVE-2017-12615",
+        "description": "When running Apache Tomcat 7.0.0 to 7.0.79 on Windows with HTTP PUTs enabled (e.g. via setting the readonly initialisation parameter of the Default to false) it was possible to upload a JSP file to the server via a specially crafted request. This JSP could then be requested and any code it contained would be executed by the server.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.tomcat.embed:tomcat-embed-core"
+    },
+    {
+        "affects": {
+            "org.restlet.jse:org.restlet": [
+                "[,2.3.11)"
+            ]
+        },
+        "cve": "CVE-2017-14868",
+        "description": "Restlet Framework before 2.3.11, when using SimpleXMLProvider, allows remote attackers to access arbitrary files via an XXE attack in a REST API HTTP request. This affects use of the Jax-rs extension.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.restlet.jse:org.restlet"
+    },
+    {
+        "affects": {
+            "org.restlet.jse:org.restlet": [
+                "[,2.3.12)"
+            ]
+        },
+        "cve": "CVE-2017-14949",
+        "description": "Restlet Framework before 2.3.12 allows remote attackers to access arbitrary files via a crafted REST API HTTP request that conducts an XXE attack, because only general external entities (not parameter external entities) are properly considered. This is related to XmlRepresentation, DOMRepresentation, SaxRepresentation, and JacksonRepresentation.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.restlet.jse:org.restlet"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-core": [
+                "[2.18.0,2.18.2)",
+                "[,2.17.6)"
+            ]
+        },
+        "cve": "CVE-2017-5643",
+        "description": "Apache Camel's Validation Component is vulnerable against SSRF via remote DTDs and XXE.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.camel:camel-core"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-castor": [
+                "2.20.0",
+                "[2.0.0,2.19.4)"
+            ]
+        },
+        "cve": "CVE-2017-12634",
+        "description": "The camel-castor component in Apache Camel 2.x before 2.19.4 and 2.20.x before 2.20.1 is vulnerable to Java object de-serialisation vulnerability. De-serializing untrusted data can lead to security flaws.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-castor"
+    },
+    {
+        "affects": {
+            "org.apache.ignite:ignite-core": [
+                "[,2.1)"
+            ]
+        },
+        "cve": "CVE-2017-7686",
+        "description": "Apache Ignite 1.0.0-RC3 to 2.0 uses an update notifier component to update the users about new project releases that include additional functionality, bug fixes and performance improvements. To do that the component communicates to an external PHP server (http://ignite.run) where it needs to send some system properties like Apache Ignite or Java version. Some of the properties might contain user sensitive information.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.ignite:ignite-core"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-rest-plugin": [
+                "[2.5.0,2.5.13)",
+                "[,2.3.34)"
+            ]
+        },
+        "cve": "CVE-2017-9805",
+        "description": "The REST Plugin in Apache Struts 2.1.2 through 2.3.x before 2.3.34 and 2.5.x before 2.5.13 uses an XStreamHandler with an instance of XStream for deserialization without any type filtering, which can lead to Remote Code Execution when deserializing XML payloads.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.struts:struts2-rest-plugin"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-core": [
+                "[2.5.0,2.5.12]",
+                "[2.3.7,2.3.33]"
+            ]
+        },
+        "cve": "CVE-2017-9804",
+        "description": "In Apache Struts 2.3.7 through 2.3.33 and 2.5 through 2.5.12, if an application allows entering a URL in a form field and built-in URLValidator is used, it is possible to prepare a special URL which will be used to overload server process when performing validation of the URL.  NOTE: this vulnerability exists because of an incomplete fix for S2-047 / CVE-2017-7672.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.struts:struts2-core"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-core": [
+                "[2.5.0,2.5.12)",
+                "[,2.3.33)"
+            ]
+        },
+        "cve": "CVE-2017-9787",
+        "description": "When using a Spring AOP functionality to secure Struts actions it is possible to perform a DoS attack. Solution is to upgrade to Apache Struts version 2.5.12 or 2.3.33.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.struts:struts2-core"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-core": [
+                "[2.5.0,2.5.12)"
+            ]
+        },
+        "cve": "CVE-2017-7672",
+        "description": "If an application allows enter an URL in a form field and built-in URLValidator is used, it is possible to prepare a special URL which will be used to overload server process when performing validation of the URL. Solution is to upgrade to Apache Struts version 2.5.12.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.struts:struts2-core"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-rest-plugin": [
+                "[2.5.0,2.5.14]"
+            ]
+        },
+        "cve": "CVE-2017-15707",
+        "description": "In Apache Struts 2.5 to 2.5.14, the REST Plugin is using an outdated JSON-lib library which is vulnerable and allow perform a DoS attack using malicious request with specially crafted JSON payload.",
+        "severity": "MODERATE",
+        "summary": "Moderate severity vulnerability that affects org.apache.struts:struts2-rest-plugin"
+    },
+    {
+        "affects": {
+            "org.apache.struts:struts2-core": [
+                "[2.5.0,2.5.10]",
+                "[2.0.1,2.3.33]"
+            ]
+        },
+        "cve": "CVE-2017-12611",
+        "description": "In Apache Struts 2.0.1 through 2.3.33 and 2.5 through 2.5.10, using an unintentional expression in a Freemarker tag instead of string literals can lead to a RCE attack.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.struts:struts2-core"
+    },
+    {
+        "affects": {
+            "com.fasterxml.jackson.core:jackson-databind": [
+                "[2.8.0,2.8.9)",
+                "[2.7.0,2.7.9.1)",
+                "[,2.6.7.1)"
+            ]
+        },
+        "cve": "CVE-2017-7525",
+        "description": "A deserialization flaw was discovered in the jackson-databind, versions before 2.6.7.1, 2.7.9.1 and 2.8.9, which could allow an unauthenticated user to perform code execution by sending the maliciously crafted input to the readValue method of the ObjectMapper.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects com.fasterxml.jackson.core:jackson-databind"
+    },
+    {
+        "affects": {
+            "org.apache.camel:camel-snakeyaml": [
+                "[2.18.0,2.18.2)",
+                "[,2.17.5)"
+            ]
+        },
+        "cve": "CVE-2017-3159",
+        "description": "Apache Camel's camel-snakeyaml component is vulnerable to Java object de-serialization vulnerability. De-serializing untrusted data can lead to security flaws.",
+        "severity": "HIGH",
+        "summary": "High severity vulnerability that affects org.apache.camel:camel-snakeyaml"
+    }
+]
